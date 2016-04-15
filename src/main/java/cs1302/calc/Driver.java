@@ -101,7 +101,7 @@ public String calculationString="";
     private Button equals;
 
     @FXML
-    private Button lessThan;
+    private Button backspace;
 
     @FXML
     private Button divide;
@@ -123,6 +123,12 @@ public String calculationString="";
 
     @FXML
     private Button addition;
+
+    @FXML
+    private Button shiftRight;
+
+    @FXML
+    private Button shiftLeft;
 
     @FXML
     void actionEvent7(ActionEvent event) {
@@ -249,7 +255,7 @@ public String calculationString="";
     }
 
     @FXML
-    void actionEventLessThan(ActionEvent event) {
+    void actionEventBackspace(ActionEvent event) {
 	
     }
 
@@ -275,6 +281,16 @@ public String calculationString="";
     @FXML
     void actionEventHideBinary(ActionEvent event) {
 	showBinary=false;
+    }
+
+    @FXML
+    void actionEventLeft(ActionEvent event) {
+
+    }
+
+    @FXML
+    void actionEventRight(ActionEvent event) {
+
     }
 
     @FXML
