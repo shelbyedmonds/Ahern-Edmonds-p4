@@ -1,21 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="236.0" prefWidth="286.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs1302.calc.Driver">
+   <children>
+      <HBox layoutX="14.0" layoutY="110.0" prefHeight="116.0" prefWidth="263.0">
+         <children>
+            <VBox prefHeight="116.0" prefWidth="90.0">
+               <children>
+                  <GridPane prefHeight="85.0" prefWidth="100.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="seven" mnemonicParsing="false" onAction="#actionEvent7" text="7" />
+                        <Button fx:id="eight" mnemonicParsing="false" onAction="#actionEvent8" text="8" GridPane.columnIndex="1" />
+                        <Button fx:id="nine" mnemonicParsing="false" onAction="#actionEvent9" text="9" GridPane.columnIndex="2" />
+                        <Button fx:id="four" mnemonicParsing="false" onAction="#actionEvent4" text="4" GridPane.rowIndex="1" />
+                        <Button fx:id="five" mnemonicParsing="false" onAction="#actionEvent5" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button fx:id="six" mnemonicParsing="false" onAction="#actionEvent6" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Button fx:id="one" mnemonicParsing="false" onAction="#actionEvent1" text="1" GridPane.rowIndex="2" />
+                        <Button fx:id="two" mnemonicParsing="false" onAction="#actionEvent2" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button fx:id="three" mnemonicParsing="false" onAction="#actionEvent3" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <HBox prefHeight="24.0" prefWidth="96.0">
+                     <children>
+                        <Button fx:id="zero" mnemonicParsing="false" onAction="#actionEvent0" text="0" />
+                        <Button fx:id="equals" alignment="CENTER" blendMode="GREEN" mnemonicParsing="false" onAction="#actionEquals" prefHeight="27.0" prefWidth="66.0" text="=" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="116.0" prefWidth="43.0">
+               <children>
+                  <GridPane prefHeight="112.0" prefWidth="30.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="divide" mnemonicParsing="false" onAction="#actionEventDivide" prefHeight="27.0" prefWidth="39.0" text="/" />
+                        <Button fx:id="minus" mnemonicParsing="false" onAction="#actionEventMinus" prefHeight="27.0" prefWidth="36.0" text="-" GridPane.rowIndex="1" />
+                        <Button fx:id="multiply" mnemonicParsing="false" onAction="#actionEventMultiply" prefHeight="27.0" prefWidth="37.0" text="*" GridPane.rowIndex="2" />
+                        <Button fx:id="addition" mnemonicParsing="false" onAction="#actionEventAdd" prefHeight="27.0" prefWidth="40.0" text="+" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <VBox prefHeight="116.0" prefWidth="144.0">
+               <children>
+                  <GridPane prefHeight="56.0" prefWidth="118.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="factorial" mnemonicParsing="false" onAction="#actionEventFactorial" prefHeight="27.0" prefWidth="47.0" text="!" />
+                        <Button fx:id="lessThan" mnemonicParsing="false" onAction="#actionEventLessThan" prefHeight="27.0" prefWidth="46.0" text="&lt;" GridPane.columnIndex="1" />
+                        <Button fx:id="cancel" mnemonicParsing="false" onAction="#actionEventCancel" prefHeight="27.0" prefWidth="49.0" text="X" GridPane.columnIndex="2" />
+                        <Button fx:id="power" mnemonicParsing="false" onAction="#actionEventPower" prefHeight="27.0" prefWidth="47.0" text="^" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" text="&lt;&lt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" text="&gt;&gt;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <VBox prefHeight="57.0" prefWidth="107.0">
+                     <children>
+                        <Button fx:id="recursion" blendMode="RED" mnemonicParsing="false" onAction="#actionEventUseRecursion" prefHeight="27.0" prefWidth="141.0" text="Use Recursion" />
+                        <Button fx:id="binaryHider" blendMode="RED" mnemonicParsing="false" onAction="#actionEventHideBinary" prefHeight="29.0" prefWidth="141.0" text="Hide Binary" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="106.0" prefWidth="263.0">
+         <children>
+            <TextField fx:id="calculations" prefHeight="54.0" prefWidth="263.0" />
+            <TextArea fx:id="binaryBox" prefHeight="43.0" prefWidth="263.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
 
-<GridPane stylesheets="calc.css"
-    id="main-pane"
-    xmlns:fx="http://javafx.com/fxml" 
-    alignment="center"
-    hgap="10" vgap="10">
 
-    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
-    
-    <Text id="welcome-text" text="Welcome" 
-        GridPane.columnIndex="0" GridPane.rowIndex="0"
-        GridPane.columnSpan="2"/>
- 
-</GridPane>
+
+
+
+
