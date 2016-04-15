@@ -47,6 +47,8 @@ public boolean recursive=false;
 public RecursiveMath recursor= new RecursiveMath();
 public IterativeMath iterator= new IterativeMath();
 public boolean showBinary=true;
+public String calculationString="";
+
     @FXML
     private ResourceBundle resources;
 
@@ -125,51 +127,71 @@ public boolean showBinary=true;
     @FXML
     void actionEvent7(ActionEvent event) {
 	newVal=7;
+	calculationString=calculationString+newVal;	
+	calculationField.setText(calculationString);
     }
 
     @FXML
     void actionEvent8(ActionEvent event) {
 	newVal=8;
+	calculationString=calculationString+newVal;
+        calculationField.setText(calculationString);
     }
 
     @FXML
     void actionEvent9(ActionEvent event) {
 	newVal=9;
-    }
+    	calculationString=calculationString+newVal;
+        calculationField.setText(calculationString);
+	}
 
     @FXML
     void actionEvent4(ActionEvent event) {
 	newVal=4;
+	calculationString=calculationString+newVal;
+        calculationField.setText(calculationString);
     }
 
     @FXML
     void actionEvent5(ActionEvent event) {
 	newVal=5;
+	calculationString=calculationString+newVal;
+        calculationField.setText(calculationString);
     }
 
     @FXML
     void actionEvent6(ActionEvent event) {
 	newVal=6;
+	calculationString=calculationString+newVal;
+        calculationField.setText(calculationString);
     }
 
     @FXML
     void actionEvent1(ActionEvent event) {
 	newVal=1;
+	calculationString=calculationString+newVal;
+        calculationField.setText(calculationString);
     }
 
     @FXML
     void actionEvent2(ActionEvent event) {
 	newVal=2;
+	calculationString=calculationString+newVal;
+        calculationField.setText(calculationString);
     }
 
     @FXML
     void actionEvent3(ActionEvent event) {
 	newVal=3;
+	calculationString=calculationString+newVal;
+        calculationField.setText(calculationString);
     }
 
     @FXML
     void actionEvent0(ActionEvent event) {
 	newVal=0;
+	calculationString=calculationString+newVal;
+        calculationField.setText(calculationString);
     }
 
     @FXML
@@ -190,7 +212,12 @@ public boolean showBinary=true;
 
     @FXML
     void actionEventMinus(ActionEvent event) {
-
+	if(recursive==true){
+		recursor.sub(oldVal, newVal);
+	}
+	else{
+		iterator.sub(oldVal, newVal);
+	}
     }
 
     @FXML
