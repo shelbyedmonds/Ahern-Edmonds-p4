@@ -134,70 +134,70 @@ public String calculationString="";
     void actionEvent7(ActionEvent event) {
 	newVal=7;
 	calculationString=calculationString+newVal;	
-	calculationField.setText(calculationString);
+	calculations.setText(calculationString);
     }
 
     @FXML
     void actionEvent8(ActionEvent event) {
 	newVal=8;
 	calculationString=calculationString+newVal;
-        calculationField.setText(calculationString);
+        calculations.setText(calculationString);
     }
 
     @FXML
     void actionEvent9(ActionEvent event) {
 	newVal=9;
     	calculationString=calculationString+newVal;
-        calculationField.setText(calculationString);
+        calculations.setText(calculationString);
 	}
 
     @FXML
     void actionEvent4(ActionEvent event) {
 	newVal=4;
 	calculationString=calculationString+newVal;
-        calculationField.setText(calculationString);
+        calculations.setText(calculationString);
     }
 
     @FXML
     void actionEvent5(ActionEvent event) {
 	newVal=5;
 	calculationString=calculationString+newVal;
-        calculationField.setText(calculationString);
+        calculations.setText(calculationString);
     }
 
     @FXML
     void actionEvent6(ActionEvent event) {
 	newVal=6;
 	calculationString=calculationString+newVal;
-        calculationField.setText(calculationString);
+        calculations.setText(calculationString);
     }
 
     @FXML
     void actionEvent1(ActionEvent event) {
 	newVal=1;
 	calculationString=calculationString+newVal;
-        calculationField.setText(calculationString);
+        calculations.setText(calculationString);
     }
 
     @FXML
     void actionEvent2(ActionEvent event) {
 	newVal=2;
 	calculationString=calculationString+newVal;
-        calculationField.setText(calculationString);
+        calculations.setText(calculationString);
     }
 
     @FXML
     void actionEvent3(ActionEvent event) {
 	newVal=3;
 	calculationString=calculationString+newVal;
-        calculationField.setText(calculationString);
+        calculations.setText(calculationString);
     }
 
     @FXML
     void actionEvent0(ActionEvent event) {
 	newVal=0;
 	calculationString=calculationString+newVal;
-        calculationField.setText(calculationString);
+        calculations.setText(calculationString);
     }
 
     @FXML
@@ -234,7 +234,7 @@ public String calculationString="";
 	else{
 		iterator.mul(oldVal, newVal);
     }
-
+	}
     @FXML
     void actionEventAdd(ActionEvent event) {
 	if(recursive==true){
@@ -249,6 +249,7 @@ public String calculationString="";
     void actionEventFactorial(ActionEvent event) {
 	if(recursive==true){
 		recursor.fac(oldVal);
+	}
 	else{
 		iterator.fac(oldVal);
 	}
@@ -268,6 +269,7 @@ public String calculationString="";
     void actionEventPower(ActionEvent event) {
 	if(recursive==true){
 		recursor.pow(oldVal, newVal);
+	}
 	else{
 		iterator.pow(oldVal, newVal);
 	}
