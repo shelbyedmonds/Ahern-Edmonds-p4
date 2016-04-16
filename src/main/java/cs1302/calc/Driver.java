@@ -298,28 +298,37 @@ public String calculationString="";
         assert cancel != null : "fx:id=\"cancel\" was not injected: check your FXML file 'calc.fxml'.";
         assert nine != null : "fx:id=\"nine\" was not injected: check your FXML file 'calc.fxml'.";
         assert minus != null : "fx:id=\"minus\" was not injected: check your FXML file 'calc.fxml'.";
-        assert binaryHider != null : "fx:id=\"binaryHider\" was not injected: check your FXML file 'calc.fxml'.";
-        assert six != null : "fx:id=\"six\" was not injected: check your FXML file 'calc.fxml'.";
-        assert one != null : "fx:id=\"one\" was not injected: check your FXML file 'calc.fxml'.";
         assert factorial != null : "fx:id=\"factorial\" was not injected: check your FXML file 'calc.fxml'.";
         assert seven != null : "fx:id=\"seven\" was not injected: check your FXML file 'calc.fxml'.";
         assert two != null : "fx:id=\"two\" was not injected: check your FXML file 'calc.fxml'.";
         assert three != null : "fx:id=\"three\" was not injected: check your FXML file 'calc.fxml'.";
         assert eight != null : "fx:id=\"eight\" was not injected: check your FXML file 'calc.fxml'.";
         assert zero != null : "fx:id=\"zero\" was not injected: check your FXML file 'calc.fxml'.";
-        assert binaryBox != null : "fx:id=\"binaryBox\" was not injected: check your FXML file 'calc.fxml'.";
+        assert shiftLeft != null : "fx:id=\"shiftLeft\" was not injected: check your FXML file 'calc.fxml'.";
+        assert backspace != null : "fx:id=\"backspace\" was not injected: check your FXML file 'calc.fxml'.";
         assert four != null : "fx:id=\"four\" was not injected: check your FXML file 'calc.fxml'.";
-        assert equals != null : "fx:id=\"equals\" was not injected: check your FXML file 'calc.fxml'.";
-        assert lessThan != null : "fx:id=\"lessThan\" was not injected: check your FXML file 'calc.fxml'.";
         assert divide != null : "fx:id=\"divide\" was not injected: check your FXML file 'calc.fxml'.";
         assert power != null : "fx:id=\"power\" was not injected: check your FXML file 'calc.fxml'.";
-        assert calculations != null : "fx:id=\"calculations\" was not injected: check your FXML file 'calc.fxml'.";
         assert multiply != null : "fx:id=\"multiply\" was not injected: check your FXML file 'calc.fxml'.";
         assert five != null : "fx:id=\"five\" was not injected: check your FXML file 'calc.fxml'.";
         assert recursion != null : "fx:id=\"recursion\" was not injected: check your FXML file 'calc.fxml'.";
         assert addition != null : "fx:id=\"addition\" was not injected: check your FXML file 'calc.fxml'.";
+        assert binaryHider != null : "fx:id=\"binaryHider\" was not injected: check your FXML file 'calc.fxml'.";
+        assert six != null : "fx:id=\"six\" was not injected: check your FXML file 'calc.fxml'.";
+        assert one != null : "fx:id=\"one\" was not injected: check your FXML file 'calc.fxml'.";
+        assert shiftRight != null : "fx:id=\"shiftRight\" was not injected: check your FXML file 'calc.fxml'.";
+        assert binaryBox != null : "fx:id=\"binaryBox\" was not injected: check your FXML file 'calc.fxml'.";
+        assert equals != null : "fx:id=\"equals\" was not injected: check your FXML file 'calc.fxml'.";
+        assert calculations != null : "fx:id=\"calculations\" was not injected: check your FXML file 'calc.fxml'.";
 
     }
+
+
+
+
+
+
+
 
 
 
