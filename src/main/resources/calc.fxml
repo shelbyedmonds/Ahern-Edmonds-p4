@@ -78,11 +78,11 @@
                     </rowConstraints>
                      <children>
                         <Button fx:id="factorial" mnemonicParsing="false" onAction="#actionEventFactorial" prefHeight="27.0" prefWidth="47.0" text="!" />
-                        <Button fx:id="lessThan" mnemonicParsing="false" onAction="#actionEventLessThan" prefHeight="27.0" prefWidth="46.0" text="&lt;" GridPane.columnIndex="1" />
+                        <Button fx:id="backspace" mnemonicParsing="false" onAction="#actionEventBackspace" prefHeight="27.0" prefWidth="46.0" text="&lt;" GridPane.columnIndex="1" />
                         <Button fx:id="cancel" mnemonicParsing="false" onAction="#actionEventCancel" prefHeight="27.0" prefWidth="49.0" text="X" GridPane.columnIndex="2" />
                         <Button fx:id="power" mnemonicParsing="false" onAction="#actionEventPower" prefHeight="27.0" prefWidth="47.0" text="^" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" text="&lt;&lt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" text="&gt;&gt;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Button fx:id="shiftLeft" mnemonicParsing="false" onAction="#actionEventLeft" prefHeight="27.0" prefWidth="47.0" text="&lt;&lt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button fx:id="shiftRight" mnemonicParsing="false" onAction="#actionEventRight" prefHeight="27.0" prefWidth="47.0" text="&gt;&gt;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                   <VBox prefHeight="57.0" prefWidth="107.0">
@@ -103,6 +103,7 @@
       </VBox>
    </children>
 </AnchorPane>
+
 
 
 
