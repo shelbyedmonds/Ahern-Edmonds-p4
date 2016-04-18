@@ -34,21 +34,26 @@ public class Driver extends Application {
 	    System.exit(1);
 	} // try
 
-        primaryStage.setTitle("CalcFX!");
+        primaryStage.setTitle("Programmer's Calculator");
 	primaryStage.setScene(new Scene(root, 640, 480));
         primaryStage.show();
 
     } // start
 
-
-public int oldVal=0;
 public int newVal=0;
 public boolean recursive=false;
 public RecursiveMath recursor= new RecursiveMath();
 public IterativeMath iterator= new IterativeMath();
 public boolean showBinary=true;
 public String calculationString="";
-
+public String answerString="";
+public String ops="";
+public int rhsStop=0;
+public int lhsStop=0;
+public int opsMarker=0;
+public Integer lhs=0;
+public Integer rhs=0;
+public Character myChar=' ';
     @FXML
     private ResourceBundle resources;
 
@@ -93,7 +98,7 @@ public String calculationString="";
 
     @FXML
     private TextArea binaryBox;
-
+    
     @FXML
     private Button four;
 
@@ -111,7 +116,7 @@ public String calculationString="";
 
     @FXML
     private TextField calculations;
-
+    
     @FXML
     private Button multiply;
 
@@ -132,9 +137,12 @@ public String calculationString="";
 
     @FXML
     private TextField answer;
-
+    
     @FXML
     void actionEvent7(ActionEvent event) {
+	binaryBox.setEditable(false);
+	answer.setEditable(false);
+	calculations.setEditable(false);
 	newVal=7;
 	calculationString=calculationString+newVal;	
 	calculations.setText(calculationString);
@@ -142,6 +150,9 @@ public String calculationString="";
 
     @FXML
     void actionEvent8(ActionEvent event) {
+	binaryBox.setEditable(false);
+	answer.setEditable(false);
+	calculations.setEditable(false);
 	newVal=8;
 	calculationString=calculationString+newVal;
         calculations.setText(calculationString);
@@ -149,6 +160,9 @@ public String calculationString="";
 
     @FXML
     void actionEvent9(ActionEvent event) {
+	binaryBox.setEditable(false);
+	answer.setEditable(false);
+	calculations.setEditable(false);
 	newVal=9;
     	calculationString=calculationString+newVal;
         calculations.setText(calculationString);
@@ -156,6 +170,9 @@ public String calculationString="";
 
     @FXML
     void actionEvent4(ActionEvent event) {
+	binaryBox.setEditable(false);
+	answer.setEditable(false);
+	calculations.setEditable(false);
 	newVal=4;
 	calculationString=calculationString+newVal;
         calculations.setText(calculationString);
@@ -163,6 +180,9 @@ public String calculationString="";
 
     @FXML
     void actionEvent5(ActionEvent event) {
+	binaryBox.setEditable(false);
+	answer.setEditable(false);
+	calculations.setEditable(false);
 	newVal=5;
 	calculationString=calculationString+newVal;
         calculations.setText(calculationString);
@@ -170,6 +190,9 @@ public String calculationString="";
 
     @FXML
     void actionEvent6(ActionEvent event) {
+	binaryBox.setEditable(false);
+	answer.setEditable(false);
+	calculations.setEditable(false);
 	newVal=6;
 	calculationString=calculationString+newVal;
         calculations.setText(calculationString);
@@ -177,6 +200,9 @@ public String calculationString="";
 
     @FXML
     void actionEvent1(ActionEvent event) {
+	binaryBox.setEditable(false);
+	answer.setEditable(false);
+	calculations.setEditable(false);
 	newVal=1;
 	calculationString=calculationString+newVal;
         calculations.setText(calculationString);
@@ -184,6 +210,9 @@ public String calculationString="";
 
     @FXML
     void actionEvent2(ActionEvent event) {
+	binaryBox.setEditable(false);
+	answer.setEditable(false);
+	calculations.setEditable(false);
 	newVal=2;
 	calculationString=calculationString+newVal;
         calculations.setText(calculationString);
@@ -191,6 +220,9 @@ public String calculationString="";
 
     @FXML
     void actionEvent3(ActionEvent event) {
+	binaryBox.setEditable(false);
+	answer.setEditable(false);
+	calculations.setEditable(false);
 	newVal=3;
 	calculationString=calculationString+newVal;
         calculations.setText(calculationString);
@@ -198,6 +230,9 @@ public String calculationString="";
 
     @FXML
     void actionEvent0(ActionEvent event) {
+	binaryBox.setEditable(false);
+	answer.setEditable(false);
+	calculations.setEditable(false);
 	newVal=0;
 	calculationString=calculationString+newVal;
         calculations.setText(calculationString);
@@ -205,113 +240,183 @@ public String calculationString="";
 
     @FXML
     void actionEquals(ActionEvent event) {
-
-    }
+	binaryBox.setEditable(false);
+	answer.setEditable(false);
+	calculations.setEditable(false);
+	for(int i=0; i<calculationString.length();i++){
+		myChar=calculationString.charAt(i);
+		if(i!=0&&(myChar.equals('*')||myChar.equals('/')||myChar.equals('+')||myChar.equals('-')||myChar.equals('^')||myChar.equals('!'))){
+			lhsStop=i-1;
+			opsMarker=i;
+			for(int j=i; j<calculationString.length(); j++){
+				myChar=calculationString.charAt(j);
+				if(j==calculationString.length()-1||myChar.equals('*')||myChar.equals('/')||myChar.equals('+')||myChar.equals('-')||myChar.equals('^')||myChar.equals('!')){
+    					rhsStop=j;
+				}
+			
+				lhs= Integer.parseInt(calculationString.substring(0,lhsStop+1));
+				if(opsMarker+1==calculationString.length()){
+					rhsStop=0;
+				}
+				else if(rhsStop==opsMarker){
+					rhsStop=0;
+				}
+				else{
+				if(rhsStop+1<calculationString.length())
+					rhs=Integer.parseInt(calculationString.substring(opsMarker+1,rhsStop+1));
+				else
+					rhs=Integer.parseInt(calculationString.substring(opsMarker+1));
+				ops=calculationString.substring(opsMarker, opsMarker+1);
+				}
+			if(rhsStop!=0&&(lhsStop!=opsMarker)){
+				if(ops.equals("*")&&recursive==true)
+						answerString=""+recursor.mul(lhs, rhs);
+				if(ops.equals("*")&&recursive==false)
+						answerString=""+iterator.mul(lhs, rhs);
+				if(ops.equals("+")&&recursive==true)
+						answerString=""+recursor.add(lhs, rhs);
+				if(ops.equals("+")&&recursive==false)
+					answerString=""+iterator.add(lhs, rhs);
+				if(ops.equals("-")&&recursive==true)
+					answerString=""+recursor.sub(lhs, rhs);
+				if(ops.equals("-")&&recursive==false)
+					answerString="" + iterator.sub(lhs, rhs);
+				if(ops.equals("/")&& recursive==true);
+					answerString=""+recursor.div(lhs, rhs);
+				if(ops.equals("/")&&recursive==false)
+					answerString=""+iterator.div(lhs,rhs);
+				if(ops.equals("^")&&recursive==true)
+					answerString=""+recursor.pow(lhs, rhs);
+				if(ops.equals("^")&& recursive==false)
+					answerString=""+iterator.pow(lhs, rhs);
+				if(ops.equals("!")&&recursive==true)
+					answerString=""+recursor.fac(lhs);
+				if(ops.equals("!")&&recursive==false)
+					answerString=""+iterator.fac(lhs);
+				}
+			else if(rhsStop==0&&ops.equals("!")){
+					if(recursive==true)
+						answerString=""+recursor.fac(lhs);
+					if(recursive==false)
+						answerString=""+iterator.fac(lhs);
+			}
+				if(rhsStop==calculationString.length()-1||rhsStop==0){
+					calculationString="";
+					calculations.setText(calculationString);
+					answer.setText(answerString);
+				}
+				else if(rhsStop!=calculationString.length()-1&&rhsStop!=0)
+					calculationString=answerString+calculationString.substring(rhsStop+1);
+			}
+		}
+		
+	}
+	calculationString="";
+	answerString="";
+	calculations.setText(calculationString);	
+	
+	}
 
  @FXML
     void actionEventDivide(ActionEvent event) {
+        binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
 	calculationString=calculationString + "/";
 	calculations.setText(calculationString);
-	if(recursive==true){
-		recursor.div(oldVal, newVal);	
-	}
-	else{
-		iterator.div(oldVal, newVal);
-
-	}	
     }
 
     @FXML
     void actionEventMinus(ActionEvent event) {
+        binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
 	calculationString=calculationString+"-";
 	calculations.setText(calculationString);
-	if(recursive==true){
-		recursor.sub(oldVal, newVal);
-	}
-	else{
-		iterator.sub(oldVal, newVal);
-	}
     }
 
     @FXML
     void actionEventMultiply(ActionEvent event) {
+        binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
 	calculationString=calculationString+"*";
 	calculations.setText(calculationString);
-	if(recursive==true){
-		recursor.mul(oldVal, newVal);
-	}
-	else{
-		iterator.mul(oldVal, newVal);
-    }
 	}
     @FXML
     void actionEventAdd(ActionEvent event) {
+        binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
 	calculationString=calculationString+"+";
 	calculations.setText(calculationString);
-	if(recursive==true){
-		recursor.add(oldVal, newVal);
-	}
-	else{
-		iterator.add(oldVal, newVal);
-	}
     }
 
     @FXML
     void actionEventFactorial(ActionEvent event) {
+        binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
 	calculationString=calculationString+"!";
 	calculations.setText(calculationString);
-	if(recursive==true){
-		recursor.fac(oldVal);
-	}
-	else{
-		iterator.fac(oldVal);
-	}
     }
 
     @FXML
     void actionEventBackspace(ActionEvent event) {
+	binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
 	calculationString=calculationString.substring(0,(calculationString.length()-1));
 	calculations.setText(calculationString);		
     }
 
     @FXML
     void actionEventCancel(ActionEvent event) {
+	binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
 	calculationString="";
 	calculations.setText(calculationString);
     	newVal=0;
-	oldVal=0;
 	}
 
     @FXML
     void actionEventPower(ActionEvent event) {
+        binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
 	calculationString=calculationString+"^";
 	calculations.setText(calculationString);
-	if(recursive==true){
-		recursor.pow(oldVal, newVal);
-	}
-	else{
-		iterator.pow(oldVal, newVal);
-	}
     }
 
     @FXML
     void actionEventUseRecursion(ActionEvent event) {
+	binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
 	recursive=true;
     }
 
     @FXML
     void actionEventHideBinary(ActionEvent event) {
+        binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
 	showBinary=false;
     }
 
     @FXML
     void actionEventLeft(ActionEvent event) {
-
+        binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
     }
 
     @FXML
     void actionEventRight(ActionEvent event) {
-
+        binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
     }
 
     @FXML
@@ -343,7 +448,12 @@ public String calculationString="";
         assert equals != null : "fx:id=\"equals\" was not injected: check your FXML file 'calc.fxml'.";
         assert calculations != null : "fx:id=\"calculations\" was not injected: check your FXML file 'calc.fxml'.";
 
+        binaryBox.setEditable(false);
+        answer.setEditable(false);
+        calculations.setEditable(false);
+
     }
+
 
 
 
