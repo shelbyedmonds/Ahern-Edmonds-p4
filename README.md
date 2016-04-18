@@ -1,3 +1,12 @@
+#Project Submission
+Author: Alec Ahern 460
+Author: Shelby Edmonds 459
+
+
+
+
+
+
 # CSCI 1302 - Calculator Project (cs1302-calculator)
 
 _This project is due Sunday, 2015-04-24 @ 11:55 PM EST._
