@@ -131,6 +131,9 @@ public String calculationString="";
     private Button shiftLeft;
 
     @FXML
+    private TextField answer;
+
+    @FXML
     void actionEvent7(ActionEvent event) {
 	newVal=7;
 	calculationString=calculationString+newVal;	
@@ -207,6 +210,8 @@ public String calculationString="";
 
  @FXML
     void actionEventDivide(ActionEvent event) {
+	calculationString=calculationString + "/";
+	calculations.setText(calculationString);
 	if(recursive==true){
 		recursor.div(oldVal, newVal);	
 	}
@@ -218,6 +223,8 @@ public String calculationString="";
 
     @FXML
     void actionEventMinus(ActionEvent event) {
+	calculationString=calculationString+"-";
+	calculations.setText(calculationString);
 	if(recursive==true){
 		recursor.sub(oldVal, newVal);
 	}
@@ -228,6 +235,8 @@ public String calculationString="";
 
     @FXML
     void actionEventMultiply(ActionEvent event) {
+	calculationString=calculationString+"*";
+	calculations.setText(calculationString);
 	if(recursive==true){
 		recursor.mul(oldVal, newVal);
 	}
@@ -237,6 +246,8 @@ public String calculationString="";
 	}
     @FXML
     void actionEventAdd(ActionEvent event) {
+	calculationString=calculationString+"+";
+	calculations.setText(calculationString);
 	if(recursive==true){
 		recursor.add(oldVal, newVal);
 	}
@@ -247,6 +258,8 @@ public String calculationString="";
 
     @FXML
     void actionEventFactorial(ActionEvent event) {
+	calculationString=calculationString+"!";
+	calculations.setText(calculationString);
 	if(recursive==true){
 		recursor.fac(oldVal);
 	}
@@ -257,16 +270,22 @@ public String calculationString="";
 
     @FXML
     void actionEventBackspace(ActionEvent event) {
-	
+	calculationString=calculationString.substring(0,(calculationString.length()-1));
+	calculations.setText(calculationString);		
     }
 
     @FXML
     void actionEventCancel(ActionEvent event) {
-
-    }
+	calculationString="";
+	calculations.setText(calculationString);
+    	newVal=0;
+	oldVal=0;
+	}
 
     @FXML
     void actionEventPower(ActionEvent event) {
+	calculationString=calculationString+"^";
+	calculations.setText(calculationString);
 	if(recursive==true){
 		recursor.pow(oldVal, newVal);
 	}
@@ -319,15 +338,12 @@ public String calculationString="";
         assert six != null : "fx:id=\"six\" was not injected: check your FXML file 'calc.fxml'.";
         assert one != null : "fx:id=\"one\" was not injected: check your FXML file 'calc.fxml'.";
         assert shiftRight != null : "fx:id=\"shiftRight\" was not injected: check your FXML file 'calc.fxml'.";
+        assert answer != null : "fx:id=\"answer\" was not injected: check your FXML file 'calc.fxml'.";
         assert binaryBox != null : "fx:id=\"binaryBox\" was not injected: check your FXML file 'calc.fxml'.";
         assert equals != null : "fx:id=\"equals\" was not injected: check your FXML file 'calc.fxml'.";
         assert calculations != null : "fx:id=\"calculations\" was not injected: check your FXML file 'calc.fxml'.";
 
     }
-
-
-
-
 
 
 
