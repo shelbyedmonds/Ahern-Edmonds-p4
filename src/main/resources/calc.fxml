@@ -87,8 +87,8 @@
                   </GridPane>
                   <VBox prefHeight="57.0" prefWidth="107.0">
                      <children>
-                        <Button fx:id="recursion" blendMode="RED" mnemonicParsing="false" onAction="#actionEventUseRecursion" prefHeight="27.0" prefWidth="141.0" text="Use Recursion" />
-                        <Button fx:id="binaryHider" blendMode="RED" mnemonicParsing="false" onAction="#actionEventHideBinary" prefHeight="29.0" prefWidth="141.0" text="Hide Binary" />
+                        <Button fx:id="recursion" blendMode="EXCLUSION" mnemonicParsing="false" onAction="#actionEventUseRecursion" prefHeight="27.0" prefWidth="141.0" text="Use Recursion" />
+                        <Button fx:id="binaryHider" blendMode="EXCLUSION" mnemonicParsing="false" onAction="#actionEventHideBinary" prefHeight="29.0" prefWidth="141.0" text="Hide Binary" />
                      </children>
                   </VBox>
                </children>
@@ -97,14 +97,13 @@
       </HBox>
       <VBox layoutX="14.0" layoutY="14.0" prefHeight="106.0" prefWidth="263.0">
          <children>
-            <TextField fx:id="calculations" prefHeight="30.0" prefWidth="263.0" />
-            <TextField fx:id="answer" />
-            <TextArea fx:id="binaryBox" prefHeight="43.0" prefWidth="263.0" />
+            <TextField fx:id="calculations" prefHeight="20.0" prefWidth="263.0" />
+            <TextField fx:id="answer" prefHeight="31.0" prefWidth="263.0" />
+            <TextArea fx:id="binaryBox" prefHeight="39.0" prefWidth="263.0" />
          </children>
       </VBox>
    </children>
 </AnchorPane>
-
 
 
 
