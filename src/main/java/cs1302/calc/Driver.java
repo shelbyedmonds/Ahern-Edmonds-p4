@@ -60,6 +60,7 @@ public String calculationString="";
 public String answerString="";
 public String [] infix;
 public String [] postfix;
+public String binaryRep="";
 
 
 
@@ -510,6 +511,17 @@ public String [] postfix;
 	calculationString=calculationString+"  >>  ";
         calculations.setText(calculationString);  
   }
+public void  binaryConversion(String total){
+	int currentAnswer= Integer.parseInt(total);
+	int remainder;
+	while(currentAnswer>0){	
+		remainder=currentAnswer%2;
+		binaryRep=remainder+binaryRep;
+		currentAnswer=currentAnswer/2;
+	}
+	binaryBox.setText(binaryRep);		
+}//binaryConversion
+
 
 /**This method initializes parts of the GUI from the Javafxml code.
  *
