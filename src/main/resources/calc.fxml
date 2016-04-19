@@ -97,13 +97,18 @@
       </HBox>
       <VBox layoutX="14.0" layoutY="14.0" prefHeight="106.0" prefWidth="263.0">
          <children>
-            <TextField fx:id="calculations" prefHeight="20.0" prefWidth="263.0" />
-            <TextField fx:id="answer" prefHeight="31.0" prefWidth="263.0" />
-            <TextArea fx:id="binaryBox" prefHeight="39.0" prefWidth="263.0" />
+            <TextField fx:id="calculations" prefHeight="12.0" prefWidth="263.0" />
+            <TextField fx:id="answer" prefHeight="32.0" prefWidth="263.0" />
+            <TextArea fx:id="binaryBox" prefHeight="35.0" prefWidth="263.0" />
          </children>
       </VBox>
    </children>
 </AnchorPane>
+
+
+
+
+
 
 
 
