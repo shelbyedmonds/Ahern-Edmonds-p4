@@ -40,20 +40,17 @@ public class Driver extends Application {
 
     } // start
 
-public int newVal=0;
 public boolean recursive=false;
 public RecursiveMath recursor= new RecursiveMath();
 public IterativeMath iterator= new IterativeMath();
 public boolean showBinary=true;
 public String calculationString="";
 public String answerString="";
-public String ops="";
-public int rhsStop=0;
-public int lhsStop=0;
-public int opsMarker=0;
-public Integer lhs=0;
-public Integer rhs=0;
-public Character myChar=' ';
+public String [] infix;
+public String [] postfix;
+
+
+
     @FXML
     private ResourceBundle resources;
 
@@ -143,8 +140,7 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
-	newVal=7;
-	calculationString=calculationString+newVal;	
+	calculationString=calculationString+"7";	
 	calculations.setText(calculationString);
     }
 
@@ -153,8 +149,7 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
-	newVal=8;
-	calculationString=calculationString+newVal;
+	calculationString=calculationString+"8";
         calculations.setText(calculationString);
     }
 
@@ -163,8 +158,7 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
-	newVal=9;
-    	calculationString=calculationString+newVal;
+    	calculationString=calculationString+"9";
         calculations.setText(calculationString);
 	}
 
@@ -173,8 +167,7 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
-	newVal=4;
-	calculationString=calculationString+newVal;
+	calculationString=calculationString+"4";
         calculations.setText(calculationString);
     }
 
@@ -183,8 +176,7 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
-	newVal=5;
-	calculationString=calculationString+newVal;
+	calculationString=calculationString+"5";
         calculations.setText(calculationString);
     }
 
@@ -193,8 +185,7 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
-	newVal=6;
-	calculationString=calculationString+newVal;
+	calculationString=calculationString+"6";
         calculations.setText(calculationString);
     }
 
@@ -203,8 +194,7 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
-	newVal=1;
-	calculationString=calculationString+newVal;
+	calculationString=calculationString+"1";
         calculations.setText(calculationString);
     }
 
@@ -213,8 +203,7 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
-	newVal=2;
-	calculationString=calculationString+newVal;
+	calculationString=calculationString+"2";
         calculations.setText(calculationString);
     }
 
@@ -223,8 +212,7 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
-	newVal=3;
-	calculationString=calculationString+newVal;
+	calculationString=calculationString+"3";
         calculations.setText(calculationString);
     }
 
@@ -233,8 +221,7 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
-	newVal=0;
-	calculationString=calculationString+newVal;
+	calculationString=calculationString+"0";
         calculations.setText(calculationString);
     }
 
@@ -243,77 +230,16 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
-	for(int i=0; i<calculationString.length();i++){
-		myChar=calculationString.charAt(i);
-		if(i!=0&&(myChar.equals('*')||myChar.equals('/')||myChar.equals('+')||myChar.equals('-')||myChar.equals('^')||myChar.equals('!'))){
-			lhsStop=i-1;
-			opsMarker=i;
-			for(int j=i; j<calculationString.length(); j++){
-				myChar=calculationString.charAt(j);
-				if(j==calculationString.length()-1||myChar.equals('*')||myChar.equals('/')||myChar.equals('+')||myChar.equals('-')||myChar.equals('^')||myChar.equals('!')){
-    					rhsStop=j;
-				}
-			
-				lhs= Integer.parseInt(calculationString.substring(0,lhsStop+1));
-				if(opsMarker+1==calculationString.length()){
-					rhsStop=0;
-				}
-				else if(rhsStop==opsMarker){
-					rhsStop=0;
-				}
-				else{
-				if(rhsStop+1<calculationString.length())
-					rhs=Integer.parseInt(calculationString.substring(opsMarker+1,rhsStop+1));
-				else
-					rhs=Integer.parseInt(calculationString.substring(opsMarker+1));
-				ops=calculationString.substring(opsMarker, opsMarker+1);
-				}
-			if(rhsStop!=0&&(lhsStop!=opsMarker)){
-				if(ops.equals("*")&&recursive==true)
-						answerString=""+recursor.mul(lhs, rhs);
-				if(ops.equals("*")&&recursive==false)
-						answerString=""+iterator.mul(lhs, rhs);
-				if(ops.equals("+")&&recursive==true)
-						answerString=""+recursor.add(lhs, rhs);
-				if(ops.equals("+")&&recursive==false)
-					answerString=""+iterator.add(lhs, rhs);
-				if(ops.equals("-")&&recursive==true)
-					answerString=""+recursor.sub(lhs, rhs);
-				if(ops.equals("-")&&recursive==false)
-					answerString="" + iterator.sub(lhs, rhs);
-				if(ops.equals("/")&& recursive==true);
-					answerString=""+recursor.div(lhs, rhs);
-				if(ops.equals("/")&&recursive==false)
-					answerString=""+iterator.div(lhs,rhs);
-				if(ops.equals("^")&&recursive==true)
-					answerString=""+recursor.pow(lhs, rhs);
-				if(ops.equals("^")&& recursive==false)
-					answerString=""+iterator.pow(lhs, rhs);
-				if(ops.equals("!")&&recursive==true)
-					answerString=""+recursor.fac(lhs);
-				if(ops.equals("!")&&recursive==false)
-					answerString=""+iterator.fac(lhs);
-				}
-			else if(rhsStop==0&&ops.equals("!")){
-					if(recursive==true)
-						answerString=""+recursor.fac(lhs);
-					if(recursive==false)
-						answerString=""+iterator.fac(lhs);
-			}
-				if(rhsStop==calculationString.length()-1||rhsStop==0){
-					calculationString="";
-					calculations.setText(calculationString);
-					answer.setText(answerString);
-				}
-				else if(rhsStop!=calculationString.length()-1&&rhsStop!=0)
-					calculationString=answerString+calculationString.substring(rhsStop+1);
-			}
-		}
-		
-	}
+
+	infix= calculationString.split("  ");
+	postfix=ReversePolishNotation.infixToPostfix(infix);
+	if(recursive==false)
+		answerString=""+ReversePolishNotation.evaluate(iterator, postfix);
+	else
+		answerString=""+ReversePolishNotation.evaluate(recursor, postfix);
+	answer.setText(answerString);
 	calculationString="";
-	answerString="";
-	calculations.setText(calculationString);	
+	calculations.setText(calculationString);
 	
 	}
 
@@ -322,7 +248,7 @@ public Character myChar=' ';
         binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString + "/";
+	calculationString=calculationString + "  /  ";
 	calculations.setText(calculationString);
     }
 
@@ -331,7 +257,7 @@ public Character myChar=' ';
         binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString+"-";
+	calculationString=calculationString+"  -  ";
 	calculations.setText(calculationString);
     }
 
@@ -340,7 +266,7 @@ public Character myChar=' ';
         binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString+"*";
+	calculationString=calculationString+"  *  ";
 	calculations.setText(calculationString);
 	}
     @FXML
@@ -348,7 +274,7 @@ public Character myChar=' ';
         binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString+"+";
+	calculationString=calculationString+"  +  ";
 	calculations.setText(calculationString);
     }
 
@@ -357,7 +283,7 @@ public Character myChar=' ';
         binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString+"!";
+	calculationString=calculationString+"  !  ";
 	calculations.setText(calculationString);
     }
 
@@ -377,7 +303,6 @@ public Character myChar=' ';
         calculations.setEditable(false);
 	calculationString="";
 	calculations.setText(calculationString);
-    	newVal=0;
 	}
 
     @FXML
@@ -385,7 +310,7 @@ public Character myChar=' ';
         binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString+"^";
+	calculationString=calculationString+" ^ ";
 	calculations.setText(calculationString);
     }
 
@@ -394,7 +319,10 @@ public Character myChar=' ';
 	binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
-	recursive=true;
+	if(recursive==false)
+		recursive=true;
+	else
+		recursive=false;
     }
 
     @FXML
@@ -402,22 +330,29 @@ public Character myChar=' ';
         binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
-	showBinary=false;
-    }
+	if(showBinary==true)
+		showBinary=false;
+    	else
+		showBinary=true;
+	}
 
     @FXML
     void actionEventLeft(ActionEvent event) {
         binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
-    }
+	calculationString=calculationString+"  <<  ";
+        calculations.setText(calculationString);   
+ }
 
     @FXML
     void actionEventRight(ActionEvent event) {
         binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
-    }
+	calculationString=calculationString+"  >>  ";
+        calculations.setText(calculationString);  
+  }
 
     @FXML
     void initialize() {
