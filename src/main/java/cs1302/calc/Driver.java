@@ -18,10 +18,22 @@ import javafx.scene.control.TextField;
 
 public class Driver extends Application {
 
+/**This is the main method of the driver class.
+ * It drives the entire program.
+ * 
+ * @param args String []
+ * @return void
+ */
     public static void main(String[] args) {
         launch(args);
     } // main
-    
+
+/** This method starts up the GUI for the user. It throws an excpetion
+ * if the resource file is not available.
+ *
+ * @param primaryStage Stage
+ * @return void
+ */ 
     @Override
     public void start(Stage primaryStage) {
 
@@ -134,7 +146,13 @@ public String [] postfix;
 
     @FXML
     private TextField answer;
-    
+   
+/**This method updates the GUI if the user
+ * clicks on the number 7 button. 
+ *
+ * @param event ActionEvent
+ * @return void
+ */ 
     @FXML
     void actionEvent7(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -144,6 +162,12 @@ public String [] postfix;
 	calculations.setText(calculationString);
     }
 
+/**This method updates the GUI if the user
+ *  clicks on the number 8 
+ *
+ *  @param event Action Event
+ *  @return void
+ */
     @FXML
     void actionEvent8(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -153,6 +177,12 @@ public String [] postfix;
         calculations.setText(calculationString);
     }
 
+/**This method updates the GUI if the user
+ * clicks on the number 9 button. 
+ *  
+ * @param event ActionEvent
+ * @return void
+ */ 
     @FXML
     void actionEvent9(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -162,6 +192,12 @@ public String [] postfix;
         calculations.setText(calculationString);
 	}
 
+/**This method updates the GUI if the user
+ * clicks on the number 4 button. 
+ * 
+ * @param event ActionEvent
+ * @return void
+ */ 
     @FXML
     void actionEvent4(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -171,6 +207,12 @@ public String [] postfix;
         calculations.setText(calculationString);
     }
 
+/**This method updates the GUI if the user
+ * clicks on the number 5 button. 
+ * 
+ * @param event ActionEvent
+ * @return void
+ */ 
     @FXML
     void actionEvent5(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -180,6 +222,12 @@ public String [] postfix;
         calculations.setText(calculationString);
     }
 
+/**This method updates the GUI if the user
+ * clicks on the number 6 button. 
+ *  
+ * @param event ActionEvent
+ * @return void
+ */ 
     @FXML
     void actionEvent6(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -189,6 +237,12 @@ public String [] postfix;
         calculations.setText(calculationString);
     }
 
+/**This method updates the GUI if the user
+ * clicks on the number 1 button. 
+ *  
+ * @param event ActionEvent
+ * @return void
+ */ 
     @FXML
     void actionEvent1(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -198,6 +252,12 @@ public String [] postfix;
         calculations.setText(calculationString);
     }
 
+/**This method updates the GUI if the user
+ * clicks on the number 2 button. 
+ * 
+ * @param event ActionEvent
+ * @return void
+ */ 
     @FXML
     void actionEvent2(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -207,6 +267,12 @@ public String [] postfix;
         calculations.setText(calculationString);
     }
 
+/**This method updates the GUI if the user
+ *  clicks on the number 3 button. 
+ *  
+ *  @param event ActionEvent
+ *  @return void
+ */ 
     @FXML
     void actionEvent3(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -216,6 +282,12 @@ public String [] postfix;
         calculations.setText(calculationString);
     }
 
+/**This method updates the GUI if the user
+ * clicks on the number 0 button. 
+ * 
+ * @param event ActionEvent
+ * @return void
+ */ 
     @FXML
     void actionEvent0(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -225,6 +297,14 @@ public String [] postfix;
         calculations.setText(calculationString);
     }
 
+/** This method performs the method calls needed to execute
+ * the mathematical expressions. It checks to see if the calculator is in 
+ * iterative or recursive mode and catches errors in the formatting on the 
+ * user's expression using the Reverse Polish Notation Classes.
+ *
+ * @param event ActionEvent
+ * @return void
+ */
     @FXML
     void actionEquals(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -243,7 +323,13 @@ public String [] postfix;
 	
 	}
 
- @FXML
+/** This method prints out a division symbol on the GUI in the user specified location
+ * and also adds it into the calculation string in a properly formatted way.
+ *
+ * @param event ActionEvent
+ * @return void
+ */
+    @FXML
     void actionEventDivide(ActionEvent event) {
         binaryBox.setEditable(false);
         answer.setEditable(false);
@@ -252,6 +338,12 @@ public String [] postfix;
 	calculations.setText(calculationString);
     }
 
+/**This method prints out a minus symbol on the GUI in the user specified locatin and also
+ * adds it into the calculation string in a properly formatted fashion.
+ *
+ * @param event ActionEvent
+ * @return void
+ */
     @FXML
     void actionEventMinus(ActionEvent event) {
         binaryBox.setEditable(false);
@@ -261,6 +353,13 @@ public String [] postfix;
 	calculations.setText(calculationString);
     }
 
+/**This method prints out a multiplication symbol on the GUI in the user specified locatin and also
+ * adds it into the calculation string in a properly formatted fashion.
+ *  
+ * @param event ActionEvent
+ * @return void
+ */
+
     @FXML
     void actionEventMultiply(ActionEvent event) {
         binaryBox.setEditable(false);
@@ -269,6 +368,14 @@ public String [] postfix;
 	calculationString=calculationString+"  *  ";
 	calculations.setText(calculationString);
 	}
+
+/**This method prints out an addition symbol on the GUI in the user specified locatin and also
+ * adds it into the calculation string in a properly formatted fashion.
+ *   
+ * @param event ActionEvent
+ * @return void
+ */
+
     @FXML
     void actionEventAdd(ActionEvent event) {
         binaryBox.setEditable(false);
@@ -277,6 +384,13 @@ public String [] postfix;
 	calculationString=calculationString+"  +  ";
 	calculations.setText(calculationString);
     }
+
+/**This method prints out a factorial symbol on the GUI in the user specified locatin and also
+ * adds it into the calculation string in a properly formatted fashion.
+ *  
+ * @param event ActionEvent
+ * @return void
+ */
 
     @FXML
     void actionEventFactorial(ActionEvent event) {
@@ -287,6 +401,13 @@ public String [] postfix;
 	calculations.setText(calculationString);
     }
 
+ /** This method clears off one space of the calculation string. This is designed to remove
+ * the last character of the user's expression.
+ *  
+ * @param event ActionEvent
+ * @return void
+ */
+
     @FXML
     void actionEventBackspace(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -296,6 +417,12 @@ public String [] postfix;
 	calculations.setText(calculationString);		
     }
 
+/**This method clears the entire GUI calculation area. It also clears the calculation string so that
+ * further expressions made will not be changed in any way via previous expressions.
+ *
+ * @param event Action Event
+ * @return void
+ */
     @FXML
     void actionEventCancel(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -305,6 +432,12 @@ public String [] postfix;
 	calculations.setText(calculationString);
 	}
 
+/**This method prints out a power symbol on the GUI in the user specified locatin and also
+ *  adds it into the calculation string in a properly formatted fashion.
+ *  
+ * @param event ActionEvent
+ * @return void
+ */
     @FXML
     void actionEventPower(ActionEvent event) {
         binaryBox.setEditable(false);
@@ -314,6 +447,12 @@ public String [] postfix;
 	calculations.setText(calculationString);
     }
 
+/**This method toggles the calculators functionality to be the opposite of 
+ * what is currently is. It changes it from recursive to iterative and vice versa.
+ *
+ * @param event ActionEvent
+ * @return void
+ */
     @FXML
     void actionEventUseRecursion(ActionEvent event) {
 	binaryBox.setEditable(false);
@@ -325,6 +464,12 @@ public String [] postfix;
 		recursive=false;
     }
 
+/**This method toggles the calculator's display to either show the binary codes
+ * or hide them depending on the current setting.
+ *
+ * @param event ActionEvent
+ * @return void
+ */
     @FXML
     void actionEventHideBinary(ActionEvent event) {
         binaryBox.setEditable(false);
@@ -336,6 +481,12 @@ public String [] postfix;
 		showBinary=true;
 	}
 
+/**This method prints out a left shift symbol on the GUI in the user specified locatin and also
+ * adds it into the calculation string in a properly formatted fashion.
+ * 
+ * @param event ActionEvent
+ * @return void
+ */
     @FXML
     void actionEventLeft(ActionEvent event) {
         binaryBox.setEditable(false);
@@ -345,6 +496,12 @@ public String [] postfix;
         calculations.setText(calculationString);   
  }
 
+/**This method prints out a right shift symbol on the GUI in the user specified locatin and also
+ * adds it into the calculation string in a properly formatted fashion.
+ * 
+ * @param event ActionEvent
+ * @return void
+ */
     @FXML
     void actionEventRight(ActionEvent event) {
         binaryBox.setEditable(false);
@@ -354,6 +511,11 @@ public String [] postfix;
         calculations.setText(calculationString);  
   }
 
+/**This method initializes parts of the GUI from the Javafxml code.
+ *
+ * @param none
+ * @return void
+ */
     @FXML
     void initialize() {
         assert cancel != null : "fx:id=\"cancel\" was not injected: check your FXML file 'calc.fxml'.";
