@@ -6,9 +6,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="236.0" prefWidth="286.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs1302.calc.Driver">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="253.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs1302.calc.Driver">
    <children>
-      <HBox layoutX="14.0" layoutY="110.0" prefHeight="116.0" prefWidth="263.0">
+      <HBox layoutX="21.0" layoutY="120.0" prefHeight="124.0" prefWidth="263.0">
          <children>
             <VBox prefHeight="116.0" prefWidth="90.0">
                <children>
@@ -98,16 +98,176 @@
       <VBox layoutX="14.0" layoutY="14.0" prefHeight="106.0" prefWidth="263.0">
          <children>
             <TextField fx:id="calculations" prefHeight="12.0" prefWidth="263.0" />
-            <TextField fx:id="answer" prefHeight="32.0" prefWidth="263.0" />
-            <TextArea fx:id="binaryBox" prefHeight="35.0" prefWidth="263.0" />
+            <TextField fx:id="answer" prefHeight="60.0" prefWidth="263.0" />
+            <HBox fx:id="binaryHBox" prefHeight="20.0" prefWidth="289.0">
+               <children>
+                  <Label fx:id="oneBinary" onMouseClicked="#eventOne" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="twoBinary" onMouseClicked="#eventTwo" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="threeBinary" layoutX="19.0" layoutY="10.0" onMouseClicked="#eventThree" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label text="  " />
+                  <Label fx:id="fourBinary" layoutX="28.0" layoutY="10.0" onMouseClicked="#eventFour" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fiveBinary" layoutX="37.0" layoutY="10.0" onMouseClicked="#eventFive" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="sixBinary" layoutX="46.0" layoutY="10.0" onMouseClicked="#eventSix" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="sevenBinary" layoutX="55.0" layoutY="10.0" onMouseClicked="#eventSeven" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label text="  " />
+                  <Label fx:id="eightBinary" layoutX="64.0" layoutY="10.0" onMouseClicked="#eventEight" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nineBinary" layoutX="73.0" layoutY="10.0" onMouseClicked="#eventNine" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tenBinary" layoutX="82.0" layoutY="10.0" onMouseClicked="#eventTen" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="elevenBinary" layoutX="91.0" layoutY="10.0" onMouseClicked="#eventEleven" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label text="  " />
+                  <Label fx:id="twelveBinary" layoutX="100.0" layoutY="10.0" onMouseClicked="#eventTwelve" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="thirteenBinary" layoutX="109.0" layoutY="10.0" onMouseClicked="#eventThirteen" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fourteenBinary" layoutX="118.0" layoutY="10.0" onMouseClicked="#eventFourteen" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fifteenBinary" layoutX="127.0" layoutY="10.0" onMouseClicked="#eventFifteen" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label text="  " />
+                  <Label fx:id="sixteenBinary" layoutX="136.0" layoutY="10.0" onMouseClicked="#eventSixteen" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="seventeenBinary" layoutX="145.0" layoutY="10.0" onMouseClicked="#eventSeventeen" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="eighteenBinary" layoutX="154.0" layoutY="10.0" onMouseClicked="#eventEighteen" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nineteenBinary" layoutX="163.0" layoutY="10.0" onMouseClicked="#eventNineteen" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label text="  " />
+                  <Label fx:id="twentyBinary" layoutX="172.0" layoutY="10.0" onMouseClicked="#eventTwenty" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="twentyoneBinary" layoutX="181.0" layoutY="10.0" onMouseClicked="#eventTwentyOne" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="twentytwoBinary" layoutX="190.0" layoutY="10.0" onMouseClicked="#eventTwentytwo" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="twentythreeBinary" layoutX="199.0" layoutY="10.0" onMouseClicked="#eventTwentythree" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label text="  " />
+                  <Label fx:id="twentyfourBinary" layoutX="208.0" layoutY="10.0" onMouseClicked="#eventTwentyfour" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="twentyfiveBinary" layoutX="217.0" layoutY="10.0" onMouseClicked="#eventTwentyfive" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="twentysixBinary" layoutX="226.0" layoutY="10.0" onMouseClicked="#eventTwentysix" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="twentysevenBinary" layoutX="235.0" layoutY="10.0" onMouseClicked="#eventTwentyseven" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label text="  " />
+                  <Label fx:id="twentyeightBinary" layoutX="244.0" layoutY="10.0" onMouseClicked="#eventTwentyeight" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="twentynineBinary" layoutX="199.0" layoutY="10.0" onMouseClicked="#eventTwentynine" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="thirtyBinary" layoutX="206.0" layoutY="10.0" onMouseClicked="#eventThirty" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="thirtyoneBinary" layoutX="213.0" layoutY="10.0" onMouseClicked="#eventThirtyOne" text="0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children></HBox>
          </children>
       </VBox>
    </children>
 </AnchorPane>
-
-
-
-
 
 
 
