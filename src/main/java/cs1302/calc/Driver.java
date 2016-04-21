@@ -407,7 +407,8 @@ public String binaryRep="0000000000000000000000000000000";
 	answer.setText(answerString);
 	calculationString="";
 	calculations.setText(calculationString);
-	
+	resetBinaryLabels();	
+	binaryConversion(answerString);	
 	}
 
 /** This method prints out a division symbol on the GUI in the user specified location
@@ -525,7 +526,7 @@ public String binaryRep="0000000000000000000000000000000";
     void actionEventPower(ActionEvent event) {
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString+" ^ ";
+	calculationString=calculationString+"  ^  ";
 	calculations.setText(calculationString);
     }
 
@@ -539,11 +540,15 @@ public String binaryRep="0000000000000000000000000000000";
     void actionEventUseRecursion(ActionEvent event) {
         answer.setEditable(false);
         calculations.setEditable(false);
-	if(recursive==false)
+	if(recursive==false){
 		recursive=true;
-	else
+		recursion.setText("Use Iteration");		
+	}
+	else{
 		recursive=false;
-    }
+		recursion.setText("Use Recursion");
+    	}
+	}
 
 /**This method toggles the calculator's display to either show the binary codes
  * or hide them depending on the current setting.
@@ -558,10 +563,12 @@ public String binaryRep="0000000000000000000000000000000";
 	if(showBinary==true){
 		showBinary=false;
 		binaryHBox.setVisible(false);		
-    	}
+    		binaryHider.setText("Show Binary");
+	}
 	else{
 		showBinary=true;
 		binaryHBox.setVisible(true);
+		binaryHider.setText("Hide Binary");
 	}
 }
 
@@ -638,37 +645,37 @@ public void  binaryConversion(String total){
 	for(int i=31-binaryRep.length(); i>0; i--){
 		binaryRep=0+ binaryRep;
 	}
-	oneBinary.setText(""+binaryRep.charAt(0));
-	twoBinary.setText(""+binaryRep.charAt(1));
-	threeBinary.setText(""+binaryRep.charAt(2));
-	fourBinary.setText(""+binaryRep.charAt(3));
-	fiveBinary.setText(""+binaryRep.charAt(4));
-	sixBinary.setText(""+binaryRep.charAt(5));
-	sevenBinary.setText(""+binaryRep.charAt(6));
-	eightBinary.setText(""+binaryRep.charAt(7));
-	nineBinary.setText(""+binaryRep.charAt(8));
-	tenBinary.setText(""+binaryRep.charAt(9));
-	elevenBinary.setText(""+binaryRep.charAt(10));
-	twelveBinary.setText(""+binaryRep.charAt(11));
-	thirteenBinary.setText(""+binaryRep.charAt(12));
-	fourteenBinary.setText(""+binaryRep.charAt(13));
-	fifteenBinary.setText(""+binaryRep.charAt(14));
+	oneBinary.setText(""+binaryRep.charAt(30));
+	twoBinary.setText(""+binaryRep.charAt(29));
+	threeBinary.setText(""+binaryRep.charAt(28));
+	fourBinary.setText(""+binaryRep.charAt(27));
+	fiveBinary.setText(""+binaryRep.charAt(26));
+	sixBinary.setText(""+binaryRep.charAt(25));
+	sevenBinary.setText(""+binaryRep.charAt(24));
+	eightBinary.setText(""+binaryRep.charAt(23));
+	nineBinary.setText(""+binaryRep.charAt(22));
+	tenBinary.setText(""+binaryRep.charAt(21));
+	elevenBinary.setText(""+binaryRep.charAt(20));
+	twelveBinary.setText(""+binaryRep.charAt(19));
+	thirteenBinary.setText(""+binaryRep.charAt(18));
+	fourteenBinary.setText(""+binaryRep.charAt(17));
+	fifteenBinary.setText(""+binaryRep.charAt(16));
 	sixteenBinary.setText(""+binaryRep.charAt(15));
-	seventeenBinary.setText(""+binaryRep.charAt(16));
-	eighteenBinary.setText(""+binaryRep.charAt(17));
-	nineteenBinary.setText(""+binaryRep.charAt(18));
-	twentyBinary.setText(""+binaryRep.charAt(19));
-	twentyoneBinary.setText(""+binaryRep.charAt(20));
-	twentytwoBinary.setText(""+binaryRep.charAt(21));
-	twentythreeBinary.setText(""+binaryRep.charAt(22));
-	twentyfourBinary.setText(""+binaryRep.charAt(23));
-	twentyfiveBinary.setText(""+binaryRep.charAt(24));
-	twentysixBinary.setText(""+binaryRep.charAt(25));
-	twentysevenBinary.setText(""+binaryRep.charAt(26));
-	twentyeightBinary.setText(""+binaryRep.charAt(27));
-	twentynineBinary.setText(""+binaryRep.charAt(28));
-	thirtyBinary.setText(""+binaryRep.charAt(29));
-	thirtyoneBinary.setText(""+binaryRep.charAt(30));
+	seventeenBinary.setText(""+binaryRep.charAt(14));
+	eighteenBinary.setText(""+binaryRep.charAt(13));
+	nineteenBinary.setText(""+binaryRep.charAt(12));
+	twentyBinary.setText(""+binaryRep.charAt(11));
+	twentyoneBinary.setText(""+binaryRep.charAt(10));
+	twentytwoBinary.setText(""+binaryRep.charAt(9));
+	twentythreeBinary.setText(""+binaryRep.charAt(8));
+	twentyfourBinary.setText(""+binaryRep.charAt(7));
+	twentyfiveBinary.setText(""+binaryRep.charAt(6));
+	twentysixBinary.setText(""+binaryRep.charAt(5));
+	twentysevenBinary.setText(""+binaryRep.charAt(4));
+	twentyeightBinary.setText(""+binaryRep.charAt(3));
+	twentynineBinary.setText(""+binaryRep.charAt(2));
+	thirtyBinary.setText(""+binaryRep.charAt(1));
+	thirtyoneBinary.setText(""+binaryRep.charAt(0));
 }//binaryConversion
 
 	public void decimalConversion(String binaryRep){
