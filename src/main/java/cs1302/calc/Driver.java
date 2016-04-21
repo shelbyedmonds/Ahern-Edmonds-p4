@@ -15,6 +15,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.InputEvent;
 
 public class Driver extends Application {
 
@@ -63,7 +67,6 @@ public String [] postfix;
 public String binaryRep="";
 
 
-
     @FXML
     private ResourceBundle resources;
 
@@ -77,58 +80,43 @@ public String binaryRep="";
     private Button nine;
 
     @FXML
-    private Button minus;
+    private Label nineBinary;
 
     @FXML
-    private Button binaryHider;
+    private Label eighteenBinary;
 
     @FXML
-    private Button six;
-
-    @FXML
-    private Button one;
-
-    @FXML
-    private Button factorial;
+    private Label threeBinary;
 
     @FXML
     private Button seven;
 
     @FXML
-    private Button two;
-
-    @FXML
     private Button three;
 
     @FXML
-    private Button eight;
+    private Label twentyfourBinary;
+
+    @FXML
+    private Label twentyfiveBinary;
 
     @FXML
     private Button zero;
 
     @FXML
-    private TextArea binaryBox;
-    
+    private Button shiftLeft;
+
     @FXML
     private Button four;
 
     @FXML
-    private Button equals;
+    private Label twentyeightBinary;
 
     @FXML
-    private Button backspace;
+    private HBox binaryHBox;
 
     @FXML
-    private Button divide;
-
-    @FXML
-    private Button power;
-
-    @FXML
-    private TextField calculations;
-    
-    @FXML
-    private Button multiply;
+    private Label twelveBinary;
 
     @FXML
     private Button five;
@@ -140,14 +128,122 @@ public String binaryRep="";
     private Button addition;
 
     @FXML
+    private Label tenBinary;
+
+    @FXML
+    private Label twentythreeBinary;
+
+    @FXML
+    private Label sixBinary;
+
+    @FXML
+    private Label twentysixBinary;
+
+    @FXML
     private Button shiftRight;
 
     @FXML
-    private Button shiftLeft;
+    private Label eightBinary;
+
+    @FXML
+    private TextField calculations;
+
+    @FXML
+    private Label fourBinary;
+
+    @FXML
+    private Label seventeenBinary;
+
+    @FXML
+    private Button minus;
+
+    @FXML
+    private Button factorial;
+
+    @FXML
+    private Label twentysevenBinary;
+
+    @FXML
+    private Label twentynineBinary;
+
+    @FXML
+    private Label thirteenBinary;
+
+    @FXML
+    private Button two;
+
+    @FXML
+    private Label sevenBinary;
+
+    @FXML
+    private Button eight;
+
+    @FXML
+    private Label sixteenBinary;
+
+    @FXML
+    private Button backspace;
+
+    @FXML
+    private Label elevenBinary;
+
+    @FXML
+    private Button divide;
+
+    @FXML
+    private Label oneBinary;
+
+    @FXML
+    private Button power;
+
+    @FXML
+    private Button multiply;
+
+    @FXML
+    private Label fiveBinary;
+
+    @FXML
+    private Button binaryHider;
+
+    @FXML
+    private Button six;
+
+    @FXML
+    private Label twentytwoBinary;
+
+    @FXML
+    private Button one;
+
+    @FXML
+    private Label fifteenBinary;
+
+    @FXML
+    private Label nineteenBinary;
+
+    @FXML
+    private Label twoBinary;
+
+    @FXML
+    private Label thirtyoneBinary;
 
     @FXML
     private TextField answer;
-   
+
+    @FXML
+    private Label twentyBinary;
+
+    @FXML
+    private Label twentyoneBinary;
+
+    @FXML
+    private Label thirtyBinary;
+
+    @FXML
+    private Button equals;
+
+    @FXML
+    private Label fourteenBinary;
+
 /**This method updates the GUI if the user
  * clicks on the number 7 button. 
  *
@@ -156,7 +252,6 @@ public String binaryRep="";
  */ 
     @FXML
     void actionEvent7(ActionEvent event) {
-	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
 	calculationString=calculationString+"7";	
@@ -171,7 +266,6 @@ public String binaryRep="";
  */
     @FXML
     void actionEvent8(ActionEvent event) {
-	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
 	calculationString=calculationString+"8";
@@ -186,7 +280,6 @@ public String binaryRep="";
  */ 
     @FXML
     void actionEvent9(ActionEvent event) {
-	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
     	calculationString=calculationString+"9";
@@ -201,7 +294,6 @@ public String binaryRep="";
  */ 
     @FXML
     void actionEvent4(ActionEvent event) {
-	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
 	calculationString=calculationString+"4";
@@ -216,7 +308,6 @@ public String binaryRep="";
  */ 
     @FXML
     void actionEvent5(ActionEvent event) {
-	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
 	calculationString=calculationString+"5";
@@ -231,7 +322,6 @@ public String binaryRep="";
  */ 
     @FXML
     void actionEvent6(ActionEvent event) {
-	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
 	calculationString=calculationString+"6";
@@ -246,7 +336,6 @@ public String binaryRep="";
  */ 
     @FXML
     void actionEvent1(ActionEvent event) {
-	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
 	calculationString=calculationString+"1";
@@ -261,7 +350,6 @@ public String binaryRep="";
  */ 
     @FXML
     void actionEvent2(ActionEvent event) {
-	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
 	calculationString=calculationString+"2";
@@ -276,7 +364,6 @@ public String binaryRep="";
  */ 
     @FXML
     void actionEvent3(ActionEvent event) {
-	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
 	calculationString=calculationString+"3";
@@ -291,7 +378,6 @@ public String binaryRep="";
  */ 
     @FXML
     void actionEvent0(ActionEvent event) {
-	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
 	calculationString=calculationString+"0";
@@ -308,7 +394,6 @@ public String binaryRep="";
  */
     @FXML
     void actionEquals(ActionEvent event) {
-	binaryBox.setEditable(false);
 	answer.setEditable(false);
 	calculations.setEditable(false);
 
@@ -332,7 +417,6 @@ public String binaryRep="";
  */
     @FXML
     void actionEventDivide(ActionEvent event) {
-        binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	calculationString=calculationString + "  /  ";
@@ -347,7 +431,6 @@ public String binaryRep="";
  */
     @FXML
     void actionEventMinus(ActionEvent event) {
-        binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	calculationString=calculationString+"  -  ";
@@ -363,7 +446,6 @@ public String binaryRep="";
 
     @FXML
     void actionEventMultiply(ActionEvent event) {
-        binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	calculationString=calculationString+"  *  ";
@@ -379,7 +461,6 @@ public String binaryRep="";
 
     @FXML
     void actionEventAdd(ActionEvent event) {
-        binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	calculationString=calculationString+"  +  ";
@@ -395,7 +476,6 @@ public String binaryRep="";
 
     @FXML
     void actionEventFactorial(ActionEvent event) {
-        binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	calculationString=calculationString+"  !  ";
@@ -411,7 +491,6 @@ public String binaryRep="";
 
     @FXML
     void actionEventBackspace(ActionEvent event) {
-	binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	calculationString=calculationString.substring(0,(calculationString.length()-1));
@@ -426,7 +505,6 @@ public String binaryRep="";
  */
     @FXML
     void actionEventCancel(ActionEvent event) {
-	binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	calculationString="";
@@ -441,7 +519,6 @@ public String binaryRep="";
  */
     @FXML
     void actionEventPower(ActionEvent event) {
-        binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	calculationString=calculationString+" ^ ";
@@ -456,7 +533,6 @@ public String binaryRep="";
  */
     @FXML
     void actionEventUseRecursion(ActionEvent event) {
-	binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	if(recursive==false)
@@ -473,7 +549,6 @@ public String binaryRep="";
  */
     @FXML
     void actionEventHideBinary(ActionEvent event) {
-        binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	if(showBinary==true)
@@ -490,7 +565,6 @@ public String binaryRep="";
  */
     @FXML
     void actionEventLeft(ActionEvent event) {
-        binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	calculationString=calculationString+"  <<  ";
@@ -505,7 +579,6 @@ public String binaryRep="";
  */
     @FXML
     void actionEventRight(ActionEvent event) {
-        binaryBox.setEditable(false);
         answer.setEditable(false);
         calculations.setEditable(false);
 	calculationString=calculationString+"  >>  ";
@@ -519,47 +592,233 @@ public void  binaryConversion(String total){
 		binaryRep=remainder+binaryRep;
 		currentAnswer=currentAnswer/2;
 	}
-	binaryBox.setText(binaryRep);		
 }//binaryConversion
 
 
-/**This method initializes parts of the GUI from the Javafxml code.
- *
- * @param none
- * @return void
- */
+
+    @FXML
+    void eventOne(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwo(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventThree(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventFour(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventFive(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventSix(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventSeven(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventEight(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventNine(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTen(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventEleven(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwelve(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventThirteen(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventFourteen(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventFifteen(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventSixteen(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventSeventeen(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventEighteen(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventNineteen(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwenty(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwentyOne(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwentytwo(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwentythree(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwentyfour(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwentyfive(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwentysix(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwentyseven(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwentyeight(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventTwentynine(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventThirty(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eventThirtyOne(MouseEvent event) {
+
+	}
+/*This method initializes parts of the GUI from the Javafxml code.
+ *  *
+ *   * @param none
+ *    * @return void
+ *     */
     @FXML
     void initialize() {
+
+
+
         assert cancel != null : "fx:id=\"cancel\" was not injected: check your FXML file 'calc.fxml'.";
+	assert cancel != null : "fx:id=\"cancel\" was not injected: check your FXML file 'calc.fxml'.";
         assert nine != null : "fx:id=\"nine\" was not injected: check your FXML file 'calc.fxml'.";
-        assert minus != null : "fx:id=\"minus\" was not injected: check your FXML file 'calc.fxml'.";
-        assert factorial != null : "fx:id=\"factorial\" was not injected: check your FXML file 'calc.fxml'.";
+        assert nineBinary != null : "fx:id=\"nineBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert eighteenBinary != null : "fx:id=\"eighteenBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert threeBinary != null : "fx:id=\"threeBinary\" was not injected: check your FXML file 'calc.fxml'.";
         assert seven != null : "fx:id=\"seven\" was not injected: check your FXML file 'calc.fxml'.";
-        assert two != null : "fx:id=\"two\" was not injected: check your FXML file 'calc.fxml'.";
         assert three != null : "fx:id=\"three\" was not injected: check your FXML file 'calc.fxml'.";
-        assert eight != null : "fx:id=\"eight\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twentyfourBinary != null : "fx:id=\"twentyfourBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twentyfiveBinary != null : "fx:id=\"twentyfiveBinary\" was not injected: check your FXML file 'calc.fxml'.";
         assert zero != null : "fx:id=\"zero\" was not injected: check your FXML file 'calc.fxml'.";
         assert shiftLeft != null : "fx:id=\"shiftLeft\" was not injected: check your FXML file 'calc.fxml'.";
-        assert backspace != null : "fx:id=\"backspace\" was not injected: check your FXML file 'calc.fxml'.";
         assert four != null : "fx:id=\"four\" was not injected: check your FXML file 'calc.fxml'.";
-        assert divide != null : "fx:id=\"divide\" was not injected: check your FXML file 'calc.fxml'.";
-        assert power != null : "fx:id=\"power\" was not injected: check your FXML file 'calc.fxml'.";
-        assert multiply != null : "fx:id=\"multiply\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twentyeightBinary != null : "fx:id=\"twentyeightBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert binaryHBox != null : "fx:id=\"binaryHBox\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twelveBinary != null : "fx:id=\"twelveBinary\" was not injected: check your FXML file 'calc.fxml'.";
         assert five != null : "fx:id=\"five\" was not injected: check your FXML file 'calc.fxml'.";
         assert recursion != null : "fx:id=\"recursion\" was not injected: check your FXML file 'calc.fxml'.";
         assert addition != null : "fx:id=\"addition\" was not injected: check your FXML file 'calc.fxml'.";
+        assert tenBinary != null : "fx:id=\"tenBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twentythreeBinary != null : "fx:id=\"twentythreeBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert sixBinary != null : "fx:id=\"sixBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twentysixBinary != null : "fx:id=\"twentysixBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert shiftRight != null : "fx:id=\"shiftRight\" was not injected: check your FXML file 'calc.fxml'.";
+        assert eightBinary != null : "fx:id=\"eightBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert calculations != null : "fx:id=\"calculations\" was not injected: check your FXML file 'calc.fxml'.";
+        assert fourBinary != null : "fx:id=\"fourBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert seventeenBinary != null : "fx:id=\"seventeenBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert minus != null : "fx:id=\"minus\" was not injected: check your FXML file 'calc.fxml'.";
+        assert factorial != null : "fx:id=\"factorial\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twentysevenBinary != null : "fx:id=\"twentysevenBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twentynineBinary != null : "fx:id=\"twentynineBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert thirteenBinary != null : "fx:id=\"thirteenBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert two != null : "fx:id=\"two\" was not injected: check your FXML file 'calc.fxml'.";
+        assert sevenBinary != null : "fx:id=\"sevenBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert eight != null : "fx:id=\"eight\" was not injected: check your FXML file 'calc.fxml'.";
+        assert sixteenBinary != null : "fx:id=\"sixteenBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert backspace != null : "fx:id=\"backspace\" was not injected: check your FXML file 'calc.fxml'.";
+        assert elevenBinary != null : "fx:id=\"elevenBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert divide != null : "fx:id=\"divide\" was not injected: check your FXML file 'calc.fxml'.";
+        assert oneBinary != null : "fx:id=\"oneBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert power != null : "fx:id=\"power\" was not injected: check your FXML file 'calc.fxml'.";
+        assert multiply != null : "fx:id=\"multiply\" was not injected: check your FXML file 'calc.fxml'.";
+        assert fiveBinary != null : "fx:id=\"fiveBinary\" was not injected: check your FXML file 'calc.fxml'.";
         assert binaryHider != null : "fx:id=\"binaryHider\" was not injected: check your FXML file 'calc.fxml'.";
         assert six != null : "fx:id=\"six\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twentytwoBinary != null : "fx:id=\"twentytwoBinary\" was not injected: check your FXML file 'calc.fxml'.";
         assert one != null : "fx:id=\"one\" was not injected: check your FXML file 'calc.fxml'.";
-        assert shiftRight != null : "fx:id=\"shiftRight\" was not injected: check your FXML file 'calc.fxml'.";
+        assert fifteenBinary != null : "fx:id=\"fifteenBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert nineteenBinary != null : "fx:id=\"nineteenBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twoBinary != null : "fx:id=\"twoBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert thirtyoneBinary != null : "fx:id=\"thirtyoneBinary\" was not injected: check your FXML file 'calc.fxml'.";
         assert answer != null : "fx:id=\"answer\" was not injected: check your FXML file 'calc.fxml'.";
-        assert binaryBox != null : "fx:id=\"binaryBox\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twentyBinary != null : "fx:id=\"twentyBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert twentyoneBinary != null : "fx:id=\"twentyoneBinary\" was not injected: check your FXML file 'calc.fxml'.";
+        assert thirtyBinary != null : "fx:id=\"thirtyBinary\" was not injected: check your FXML file 'calc.fxml'.";
         assert equals != null : "fx:id=\"equals\" was not injected: check your FXML file 'calc.fxml'.";
-        assert calculations != null : "fx:id=\"calculations\" was not injected: check your FXML file 'calc.fxml'.";
-
-        binaryBox.setEditable(false);
-        answer.setEditable(false);
-        calculations.setEditable(false);
+        assert fourteenBinary != null : "fx:id=\"fourteenBinary\" was not injected: check your FXML file 'calc.fxml'.";
+    
 
     }
 
