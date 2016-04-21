@@ -19,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.InputEvent;
+import javafx.scene.Node;
 
 public class Driver extends Application {
 
@@ -64,7 +65,7 @@ public String calculationString="";
 public String answerString="";
 public String [] infix;
 public String [] postfix;
-public String binaryRep="";
+public String binaryRep="0000000000000000000000000000000";
 
 
     @FXML
@@ -509,6 +510,9 @@ public String binaryRep="";
         calculations.setEditable(false);
 	calculationString="";
 	calculations.setText(calculationString);
+	answerString="";
+	answer.setText(answerString);
+	resetBinaryLabels();
 	}
 
 /**This method prints out a power symbol on the GUI in the user specified locatin and also
@@ -551,11 +555,15 @@ public String binaryRep="";
     void actionEventHideBinary(ActionEvent event) {
         answer.setEditable(false);
         calculations.setEditable(false);
-	if(showBinary==true)
+	if(showBinary==true){
 		showBinary=false;
-    	else
+		binaryHBox.setVisible(false);		
+    	}
+	else{
 		showBinary=true;
+		binaryHBox.setVisible(true);
 	}
+}
 
 /**This method prints out a left shift symbol on the GUI in the user specified locatin and also
  * adds it into the calculation string in a properly formatted fashion.
@@ -584,6 +592,41 @@ public String binaryRep="";
 	calculationString=calculationString+"  >>  ";
         calculations.setText(calculationString);  
   }
+public void resetBinaryLabels(){
+	binaryRep="0000000000000000000000000000000";
+	oneBinary.setText(""+binaryRep.charAt(0));
+        twoBinary.setText(""+binaryRep.charAt(1));
+        threeBinary.setText(""+binaryRep.charAt(2));
+        fourBinary.setText(""+binaryRep.charAt(3));
+        fiveBinary.setText(""+binaryRep.charAt(4));
+        sixBinary.setText(""+binaryRep.charAt(5));
+        sevenBinary.setText(""+binaryRep.charAt(6));
+        eightBinary.setText(""+binaryRep.charAt(7));
+        nineBinary.setText(""+binaryRep.charAt(8));
+        tenBinary.setText(""+binaryRep.charAt(9));
+        elevenBinary.setText(""+binaryRep.charAt(10));
+        twelveBinary.setText(""+binaryRep.charAt(11));
+        thirteenBinary.setText(""+binaryRep.charAt(12));
+        fourteenBinary.setText(""+binaryRep.charAt(13));
+        fifteenBinary.setText(""+binaryRep.charAt(14));
+        sixteenBinary.setText(""+binaryRep.charAt(15));
+        seventeenBinary.setText(""+binaryRep.charAt(16));
+        eighteenBinary.setText(""+binaryRep.charAt(17));
+        nineteenBinary.setText(""+binaryRep.charAt(18));
+        twentyBinary.setText(""+binaryRep.charAt(19));
+        twentyoneBinary.setText(""+binaryRep.charAt(20));
+        twentytwoBinary.setText(""+binaryRep.charAt(21));
+        twentythreeBinary.setText(""+binaryRep.charAt(22));
+        twentyfourBinary.setText(""+binaryRep.charAt(23));
+        twentyfiveBinary.setText(""+binaryRep.charAt(24));
+        twentysixBinary.setText(""+binaryRep.charAt(25));
+        twentysevenBinary.setText(""+binaryRep.charAt(26));
+        twentyeightBinary.setText(""+binaryRep.charAt(27));
+        twentynineBinary.setText(""+binaryRep.charAt(28));
+        thirtyBinary.setText(""+binaryRep.charAt(29));
+        thirtyoneBinary.setText(""+binaryRep.charAt(30));
+}//resetBinaryLabels
+
 public void  binaryConversion(String total){
 	int currentAnswer= Integer.parseInt(total);
 	int remainder;
@@ -592,163 +635,464 @@ public void  binaryConversion(String total){
 		binaryRep=remainder+binaryRep;
 		currentAnswer=currentAnswer/2;
 	}
+	for(int i=31-binaryRep.length(); i>0; i--){
+		binaryRep=0+ binaryRep;
+	}
+	oneBinary.setText(""+binaryRep.charAt(0));
+	twoBinary.setText(""+binaryRep.charAt(1));
+	threeBinary.setText(""+binaryRep.charAt(2));
+	fourBinary.setText(""+binaryRep.charAt(3));
+	fiveBinary.setText(""+binaryRep.charAt(4));
+	sixBinary.setText(""+binaryRep.charAt(5));
+	sevenBinary.setText(""+binaryRep.charAt(6));
+	eightBinary.setText(""+binaryRep.charAt(7));
+	nineBinary.setText(""+binaryRep.charAt(8));
+	tenBinary.setText(""+binaryRep.charAt(9));
+	elevenBinary.setText(""+binaryRep.charAt(10));
+	twelveBinary.setText(""+binaryRep.charAt(11));
+	thirteenBinary.setText(""+binaryRep.charAt(12));
+	fourteenBinary.setText(""+binaryRep.charAt(13));
+	fifteenBinary.setText(""+binaryRep.charAt(14));
+	sixteenBinary.setText(""+binaryRep.charAt(15));
+	seventeenBinary.setText(""+binaryRep.charAt(16));
+	eighteenBinary.setText(""+binaryRep.charAt(17));
+	nineteenBinary.setText(""+binaryRep.charAt(18));
+	twentyBinary.setText(""+binaryRep.charAt(19));
+	twentyoneBinary.setText(""+binaryRep.charAt(20));
+	twentytwoBinary.setText(""+binaryRep.charAt(21));
+	twentythreeBinary.setText(""+binaryRep.charAt(22));
+	twentyfourBinary.setText(""+binaryRep.charAt(23));
+	twentyfiveBinary.setText(""+binaryRep.charAt(24));
+	twentysixBinary.setText(""+binaryRep.charAt(25));
+	twentysevenBinary.setText(""+binaryRep.charAt(26));
+	twentyeightBinary.setText(""+binaryRep.charAt(27));
+	twentynineBinary.setText(""+binaryRep.charAt(28));
+	thirtyBinary.setText(""+binaryRep.charAt(29));
+	thirtyoneBinary.setText(""+binaryRep.charAt(30));
 }//binaryConversion
+
+	public void decimalConversion(String binaryRep){
+		int binaryMult=2;
+		int sum=0;
+		for(int r=30, t=0; r>=0&& t<31; r--, t++){
+			for(int i=0; i<r; i++){
+				if(i==0)
+					binaryMult=1;
+				else
+					binaryMult=binaryMult*2;
+
+			}
+		sum=sum+binaryMult*(Integer.parseInt(binaryRep.charAt(t)+""));
+		}
+		answerString=""+sum;
+		answer.setText(answerString);
+		calculationString=answerString;
+		calculations.setText(calculationString);
+	}//decimalConversion
 
 
 
     @FXML
     void eventOne(MouseEvent event) {
-
-    }
+	if(binaryRep.charAt(0)==('0')){
+		oneBinary.setText("1");
+		binaryRep=1+binaryRep.substring(1);
+	}
+	else{
+		oneBinary.setText("0");
+		binaryRep=0+binaryRep.substring(0);
+    	}
+	decimalConversion(binaryRep);
+	}
 
     @FXML
     void eventTwo(MouseEvent event) {
-
-    }
+	if(binaryRep.charAt(1)==('0')){
+		twoBinary.setText("1");
+		binaryRep=binaryRep.substring(0,1)+1+binaryRep.substring(2);
+	}
+	else{
+		twoBinary.setText("0");
+		binaryRep=binaryRep.substring(0,1)+0+binaryRep.substring(2);
+    	}
+	decimalConversion(binaryRep);
+	}
 
     @FXML
     void eventThree(MouseEvent event) {
-
+	if(binaryRep.charAt(2)==('0')){
+                threeBinary.setText("1");
+                binaryRep=binaryRep.substring(0,2)+1+binaryRep.substring(3);
+        }
+        else{
+                threeBinary.setText("0");
+                binaryRep=binaryRep.substring(0,2)+0+binaryRep.substring(3);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventFour(MouseEvent event) {
-
+	if(binaryRep.charAt(3)==('0')){
+                fourBinary.setText("1");
+                binaryRep=binaryRep.substring(0,3)+1+binaryRep.substring(4);
+        }
+        else{
+                fourBinary.setText("0");
+                binaryRep=binaryRep.substring(0,3)+0+binaryRep.substring(4);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventFive(MouseEvent event) {
-
+	if(binaryRep.charAt(4)==('0')){
+                fiveBinary.setText("1");
+                binaryRep=binaryRep.substring(0,4)+1+binaryRep.substring(5);
+        }
+        else{
+                fiveBinary.setText("0");
+                binaryRep=binaryRep.substring(0,4)+0+binaryRep.substring(5);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventSix(MouseEvent event) {
-
+	if(binaryRep.charAt(5)==('0')){
+                sixBinary.setText("1");
+                binaryRep=binaryRep.substring(0,5)+1+binaryRep.substring(6);
+        }
+        else{
+                sixBinary.setText("0");
+                binaryRep=binaryRep.substring(0,5)+0+binaryRep.substring(6);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventSeven(MouseEvent event) {
-
+	if(binaryRep.charAt(6)==('0')){
+                sevenBinary.setText("1");
+                binaryRep=binaryRep.substring(0,6)+1+binaryRep.substring(7);
+        }
+        else{
+                sevenBinary.setText("0");
+                binaryRep=binaryRep.substring(0,6)+0+binaryRep.substring(7);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventEight(MouseEvent event) {
-
+	if(binaryRep.charAt(7)==('0')){
+                eightBinary.setText("1");
+                binaryRep=binaryRep.substring(0,7)+1+binaryRep.substring(8);
+        }
+        else{
+                eightBinary.setText("0");
+                binaryRep=binaryRep.substring(0,7)+0+binaryRep.substring(8);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventNine(MouseEvent event) {
-
+	if(binaryRep.charAt(8)==('0')){
+                nineBinary.setText("1");
+                binaryRep=binaryRep.substring(0,8)+1+binaryRep.substring(9);
+        }
+        else{
+                nineBinary.setText("0");
+                binaryRep=binaryRep.substring(0,8)+0+binaryRep.substring(9);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTen(MouseEvent event) {
-
+	if(binaryRep.charAt(9)==('0')){
+                tenBinary.setText("1");
+                binaryRep=binaryRep.substring(0,9)+1+binaryRep.substring(10);
+        }
+        else{
+                tenBinary.setText("0");
+                binaryRep=binaryRep.substring(0,9)+0+binaryRep.substring(10);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventEleven(MouseEvent event) {
-
+	if(binaryRep.charAt(10)==('0')){
+                elevenBinary.setText("1");
+                binaryRep=binaryRep.substring(0,10)+1+binaryRep.substring(11);
+        }
+        else{
+                elevenBinary.setText("0");
+                binaryRep=binaryRep.substring(0,10)+0+binaryRep.substring(11);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTwelve(MouseEvent event) {
-
+	if(binaryRep.charAt(11)==('0')){
+                twelveBinary.setText("1");
+                binaryRep=binaryRep.substring(0,11)+1+binaryRep.substring(12);
+        }
+        else{
+                twelveBinary.setText("0");
+                binaryRep=binaryRep.substring(0,11)+0+binaryRep.substring(12);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventThirteen(MouseEvent event) {
-
+	if(binaryRep.charAt(12)==('0')){
+                thirteenBinary.setText("1");
+                binaryRep=binaryRep.substring(0,12)+1+binaryRep.substring(13);
+        }
+        else{
+                thirteenBinary.setText("0");
+                binaryRep=binaryRep.substring(0,12)+0+binaryRep.substring(13);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventFourteen(MouseEvent event) {
-
+	if(binaryRep.charAt(13)==('0')){
+                fourteenBinary.setText("1");
+                binaryRep=binaryRep.substring(0,13)+1+binaryRep.substring(14);
+        }
+        else{
+                fourteenBinary.setText("0");
+                binaryRep=binaryRep.substring(0,13)+0+binaryRep.substring(14);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventFifteen(MouseEvent event) {
-
+	if(binaryRep.charAt(14)==('0')){
+                fifteenBinary.setText("1");
+                binaryRep=binaryRep.substring(0,14)+1+binaryRep.substring(15);
+        }
+        else{
+                fifteenBinary.setText("0");
+                binaryRep=binaryRep.substring(0,14)+0+binaryRep.substring(15);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventSixteen(MouseEvent event) {
-
+	if(binaryRep.charAt(15)==('0')){
+                sixteenBinary.setText("1");
+                binaryRep=binaryRep.substring(0,15)+1+binaryRep.substring(16);
+        }
+        else{
+                sixteenBinary.setText("0");
+                binaryRep=binaryRep.substring(0,15)+0+binaryRep.substring(16);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventSeventeen(MouseEvent event) {
-
+	if(binaryRep.charAt(16)==('0')){
+                seventeenBinary.setText("1");
+                binaryRep=binaryRep.substring(0,16)+1+binaryRep.substring(17);
+        }
+        else{
+                seventeenBinary.setText("0");
+                binaryRep=binaryRep.substring(0,16)+0+binaryRep.substring(17);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventEighteen(MouseEvent event) {
-
+	if(binaryRep.charAt(17)==('0')){
+                eighteenBinary.setText("1");
+                binaryRep=binaryRep.substring(0,17)+1+binaryRep.substring(18);
+        }
+        else{
+                eighteenBinary.setText("0");
+                binaryRep=binaryRep.substring(0,17)+0+binaryRep.substring(18);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventNineteen(MouseEvent event) {
-
+	if(binaryRep.charAt(18)==('0')){
+                nineteenBinary.setText("1");
+                binaryRep=binaryRep.substring(0,18)+1+binaryRep.substring(19);
+        }
+        else{
+                nineteenBinary.setText("0");
+                binaryRep=binaryRep.substring(0,18)+0+binaryRep.substring(19);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTwenty(MouseEvent event) {
-
+	if(binaryRep.charAt(19)==('0')){
+                twentyBinary.setText("1");
+                binaryRep=binaryRep.substring(0,19)+1+binaryRep.substring(20);
+        }
+        else{
+                twentyBinary.setText("0");
+                binaryRep=binaryRep.substring(0,19)+0+binaryRep.substring(20);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTwentyOne(MouseEvent event) {
-
+	if(binaryRep.charAt(20)==('0')){
+                twentyoneBinary.setText("1");
+                binaryRep=binaryRep.substring(0,20)+1+binaryRep.substring(21);
+        }
+        else{
+                twentyoneBinary.setText("0");
+                binaryRep=binaryRep.substring(0,20)+0+binaryRep.substring(21);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTwentytwo(MouseEvent event) {
-
+	if(binaryRep.charAt(21)==('0')){
+                twentytwoBinary.setText("1");
+                binaryRep=binaryRep.substring(0,21)+1+binaryRep.substring(22);
+        }
+        else{
+                twentytwoBinary.setText("0");
+                binaryRep=binaryRep.substring(0,21)+0+binaryRep.substring(22);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTwentythree(MouseEvent event) {
-
+	if(binaryRep.charAt(22)==('0')){
+                twentythreeBinary.setText("1");
+                binaryRep=binaryRep.substring(0,22)+1+binaryRep.substring(23);
+        }
+        else{
+                twentythreeBinary.setText("0");
+                binaryRep=binaryRep.substring(0,22)+0+binaryRep.substring(23);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTwentyfour(MouseEvent event) {
-
+	if(binaryRep.charAt(23)==('0')){
+                twentyfourBinary.setText("1");
+                binaryRep=binaryRep.substring(0,23)+1+binaryRep.substring(24);
+        }
+        else{
+                twentyfourBinary.setText("0");
+                binaryRep=binaryRep.substring(0,23)+0+binaryRep.substring(24);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTwentyfive(MouseEvent event) {
-
+	if(binaryRep.charAt(24)==('0')){
+                twentyfiveBinary.setText("1");
+                binaryRep=binaryRep.substring(0,24)+1+binaryRep.substring(25);
+        }
+        else{
+                twentyfiveBinary.setText("0");
+                binaryRep=binaryRep.substring(0,24)+0+binaryRep.substring(25);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTwentysix(MouseEvent event) {
-
+	if(binaryRep.charAt(25)==('0')){
+                twentysixBinary.setText("1");
+                binaryRep=binaryRep.substring(0,25)+1+binaryRep.substring(26);
+        }
+        else{
+                twentysixBinary.setText("0");
+                binaryRep=binaryRep.substring(0,25)+0+binaryRep.substring(26);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTwentyseven(MouseEvent event) {
-
+	if(binaryRep.charAt(26)==('0')){
+                twentysevenBinary.setText("1");
+                binaryRep=binaryRep.substring(0,26)+1+binaryRep.substring(27);
+        }
+        else{
+                twentysevenBinary.setText("0");
+                binaryRep=binaryRep.substring(0,26)+0+binaryRep.substring(27);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTwentyeight(MouseEvent event) {
-
+	if(binaryRep.charAt(27)==('0')){
+                twentyeightBinary.setText("1");
+                binaryRep=binaryRep.substring(0,27)+1+binaryRep.substring(28);
+        }
+        else{
+                twentyeightBinary.setText("0");
+                binaryRep=binaryRep.substring(0,27)+0+binaryRep.substring(28);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventTwentynine(MouseEvent event) {
-
+	if(binaryRep.charAt(28)==('0')){
+                twentynineBinary.setText("1");
+                binaryRep=binaryRep.substring(0,28)+1+binaryRep.substring(29);
+        }
+        else{
+                twentynineBinary.setText("0");
+                binaryRep=binaryRep.substring(0,28)+0+binaryRep.substring(29);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventThirty(MouseEvent event) {
-
+	if(binaryRep.charAt(29)==('0')){
+                thirtyBinary.setText("1");
+                binaryRep=binaryRep.substring(0,29)+1+binaryRep.substring(30);
+        }
+        else{
+                thirtyBinary.setText("0");
+                binaryRep=binaryRep.substring(0,29)+0+binaryRep.substring(30);
+        }
+        decimalConversion(binaryRep);
     }
 
     @FXML
     void eventThirtyOne(MouseEvent event) {
-
+	if(binaryRep.charAt(30)==('0')){
+                thirtyoneBinary.setText("1");
+                binaryRep=binaryRep.substring(0,30)+1;
+        }
+        else{
+                thirtyBinary.setText("0");
+                binaryRep=binaryRep.substring(0,30)+0;
+        }
+        decimalConversion(binaryRep);
 	}
 /*This method initializes parts of the GUI from the Javafxml code.
  *  *
@@ -819,6 +1163,8 @@ public void  binaryConversion(String total){
         assert equals != null : "fx:id=\"equals\" was not injected: check your FXML file 'calc.fxml'.";
         assert fourteenBinary != null : "fx:id=\"fourteenBinary\" was not injected: check your FXML file 'calc.fxml'.";
     
+	answer.setEditable(false);
+        calculations.setEditable(false);
 
     }
 
