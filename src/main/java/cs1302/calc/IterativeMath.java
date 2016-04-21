@@ -5,24 +5,40 @@ import java.lang.ArithmeticException;
  * the throw statement with your implementation.
  */
 
-/**
- * REPLACE ME WITH ACTUAL JAVADOC FOR THIS CLASS.
+/** This class implements the Math interface using iteration for basic 
+ * math functions.
  *
- * @author AUTHOR
+ * @author Alec Ahern and Shelby Edmonds
  */
 public class IterativeMath implements Math {
 
+/**This method implements an iterative incrementation method.
+ *
+ * @param n int
+ * @return int
+ */
     public int inc(int n) {
 	n++;
 	return n;
     } // inc
 
+/**This method implements an iterative decrementation method.
+ *
+ * @param n int
+ * @return int
+ */
     public int dec(int n) {
 	if(n==0) return 0;
 	n--;
 	return n;
     } // dec
 
+/**This method implements an iterative addition method.
+ *
+ * @param lhs int
+ * @param rhs int
+ * @return int
+ */
     public int add(int lhs, int rhs) {
         int sum = 0;
 	for (int i = 0; i < lhs; i++) {
@@ -34,6 +50,12 @@ public class IterativeMath implements Math {
 	return sum;
     } // add
 
+/**This method implements an iterative subtration method.
+ *
+ * @param lhs int
+ * @param rhs int
+ * @return int
+ */
     public int sub(int lhs, int rhs) {
         int tot = lhs;
 	for (int i = 0; i < rhs; i++) {
@@ -42,6 +64,12 @@ public class IterativeMath implements Math {
 	return tot;
     } // sub
 
+/**This method implements an iterative multiplication method.
+ *
+ * @param lhs int 
+ * @param rhs int
+ * @return int
+ */
     public int mul(int lhs, int rhs) {
     	int product = 0;
 	for (int i = 0; i < rhs; i++) {
@@ -52,6 +80,12 @@ public class IterativeMath implements Math {
 	return product;
     } // mul
 
+/**This method implements an iterative division method.
+ *
+ * @param lhs int
+ * @param rhs int
+ * @return int
+ */
     public int div(int lhs, int rhs) {
     	try {
 		if (rhs == 0) {
@@ -84,6 +118,11 @@ public class IterativeMath implements Math {
 	
     } // div
 
+/**This method implements an iterative factorial method.
+ *
+ * @param n int
+ * @return int
+ */
     public int fac(int n) {
         if(n==0) return 1;
 	int fac = n;
@@ -93,6 +132,12 @@ public class IterativeMath implements Math {
 	return fac;
     } // fac
 
+/**This method implements an iterative power method.
+ *
+ * @param lhs int
+ * @param rhs int
+ * @return int
+ */
     public int pow(int lhs, int rhs) {
         if (rhs==0) return 1;
 	int pow = lhs;

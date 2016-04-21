@@ -27,7 +27,6 @@ public class Driver extends Application {
  * It drives the entire program.
  * 
  * @param args String []
- * @return void
  */
     public static void main(String[] args) {
         launch(args);
@@ -37,7 +36,6 @@ public class Driver extends Application {
  * if the resource file is not available.
  *
  * @param primaryStage Stage
- * @return void
  */ 
     @Override
     public void start(Stage primaryStage) {
@@ -249,7 +247,6 @@ public String binaryRep="0000000000000000000000000000000";
  * clicks on the number 7 button. 
  *
  * @param event ActionEvent
- * @return void
  */ 
     @FXML
     void actionEvent7(ActionEvent event) {
@@ -263,7 +260,6 @@ public String binaryRep="0000000000000000000000000000000";
  *  clicks on the number 8 
  *
  *  @param event Action Event
- *  @return void
  */
     @FXML
     void actionEvent8(ActionEvent event) {
@@ -277,7 +273,6 @@ public String binaryRep="0000000000000000000000000000000";
  * clicks on the number 9 button. 
  *  
  * @param event ActionEvent
- * @return void
  */ 
     @FXML
     void actionEvent9(ActionEvent event) {
@@ -291,7 +286,6 @@ public String binaryRep="0000000000000000000000000000000";
  * clicks on the number 4 button. 
  * 
  * @param event ActionEvent
- * @return void
  */ 
     @FXML
     void actionEvent4(ActionEvent event) {
@@ -305,7 +299,6 @@ public String binaryRep="0000000000000000000000000000000";
  * clicks on the number 5 button. 
  * 
  * @param event ActionEvent
- * @return void
  */ 
     @FXML
     void actionEvent5(ActionEvent event) {
@@ -319,7 +312,6 @@ public String binaryRep="0000000000000000000000000000000";
  * clicks on the number 6 button. 
  *  
  * @param event ActionEvent
- * @return void
  */ 
     @FXML
     void actionEvent6(ActionEvent event) {
@@ -333,7 +325,6 @@ public String binaryRep="0000000000000000000000000000000";
  * clicks on the number 1 button. 
  *  
  * @param event ActionEvent
- * @return void
  */ 
     @FXML
     void actionEvent1(ActionEvent event) {
@@ -347,7 +338,6 @@ public String binaryRep="0000000000000000000000000000000";
  * clicks on the number 2 button. 
  * 
  * @param event ActionEvent
- * @return void
  */ 
     @FXML
     void actionEvent2(ActionEvent event) {
@@ -361,7 +351,6 @@ public String binaryRep="0000000000000000000000000000000";
  *  clicks on the number 3 button. 
  *  
  *  @param event ActionEvent
- *  @return void
  */ 
     @FXML
     void actionEvent3(ActionEvent event) {
@@ -375,7 +364,6 @@ public String binaryRep="0000000000000000000000000000000";
  * clicks on the number 0 button. 
  * 
  * @param event ActionEvent
- * @return void
  */ 
     @FXML
     void actionEvent0(ActionEvent event) {
@@ -391,10 +379,9 @@ public String binaryRep="0000000000000000000000000000000";
  * user's expression using the Reverse Polish Notation Classes.
  *
  * @param event ActionEvent
- * @return void
  */
-    @FXML
-    void actionEquals(ActionEvent event) {
+   	@FXML 
+	void actionEquals(ActionEvent event) {
 	answer.setEditable(false);
 	calculations.setEditable(false);
 
@@ -415,7 +402,6 @@ public String binaryRep="0000000000000000000000000000000";
  * and also adds it into the calculation string in a properly formatted way.
  *
  * @param event ActionEvent
- * @return void
  */
     @FXML
     void actionEventDivide(ActionEvent event) {
@@ -429,7 +415,6 @@ public String binaryRep="0000000000000000000000000000000";
  * adds it into the calculation string in a properly formatted fashion.
  *
  * @param event ActionEvent
- * @return void
  */
     @FXML
     void actionEventMinus(ActionEvent event) {
@@ -443,7 +428,6 @@ public String binaryRep="0000000000000000000000000000000";
  * adds it into the calculation string in a properly formatted fashion.
  *  
  * @param event ActionEvent
- * @return void
  */
 
     @FXML
@@ -458,7 +442,6 @@ public String binaryRep="0000000000000000000000000000000";
  * adds it into the calculation string in a properly formatted fashion.
  *   
  * @param event ActionEvent
- * @return void
  */
 
     @FXML
@@ -473,7 +456,6 @@ public String binaryRep="0000000000000000000000000000000";
  * adds it into the calculation string in a properly formatted fashion.
  *  
  * @param event ActionEvent
- * @return void
  */
 
     @FXML
@@ -488,7 +470,6 @@ public String binaryRep="0000000000000000000000000000000";
  * the last character of the user's expression.
  *  
  * @param event ActionEvent
- * @return void
  */
 
     @FXML
@@ -503,7 +484,6 @@ public String binaryRep="0000000000000000000000000000000";
  * further expressions made will not be changed in any way via previous expressions.
  *
  * @param event Action Event
- * @return void
  */
     @FXML
     void actionEventCancel(ActionEvent event) {
@@ -520,7 +500,6 @@ public String binaryRep="0000000000000000000000000000000";
  *  adds it into the calculation string in a properly formatted fashion.
  *  
  * @param event ActionEvent
- * @return void
  */
     @FXML
     void actionEventPower(ActionEvent event) {
@@ -534,7 +513,6 @@ public String binaryRep="0000000000000000000000000000000";
  * what is currently is. It changes it from recursive to iterative and vice versa.
  *
  * @param event ActionEvent
- * @return void
  */
     @FXML
     void actionEventUseRecursion(ActionEvent event) {
@@ -554,7 +532,6 @@ public String binaryRep="0000000000000000000000000000000";
  * or hide them depending on the current setting.
  *
  * @param event ActionEvent
- * @return void
  */
     @FXML
     void actionEventHideBinary(ActionEvent event) {
@@ -576,7 +553,6 @@ public String binaryRep="0000000000000000000000000000000";
  * adds it into the calculation string in a properly formatted fashion.
  * 
  * @param event ActionEvent
- * @return void
  */
     @FXML
     void actionEventLeft(ActionEvent event) {
@@ -590,7 +566,6 @@ public String binaryRep="0000000000000000000000000000000";
  * adds it into the calculation string in a properly formatted fashion.
  * 
  * @param event ActionEvent
- * @return void
  */
     @FXML
     void actionEventRight(ActionEvent event) {
@@ -599,6 +574,12 @@ public String binaryRep="0000000000000000000000000000000";
 	calculationString=calculationString+"  >>  ";
         calculations.setText(calculationString);  
   }
+
+/**This method resets all of the binary bit labels to be 
+ * zero again. It also resets the string that represents them.
+ *
+ */
+
 public void resetBinaryLabels(){
 	binaryRep="0000000000000000000000000000000";
 	oneBinary.setText(""+binaryRep.charAt(0));
@@ -634,6 +615,13 @@ public void resetBinaryLabels(){
         thirtyoneBinary.setText(""+binaryRep.charAt(30));
 }//resetBinaryLabels
 
+
+/**This method converts a string that represents a number
+ * into a binary number. It then changes the binary labels to reflect the 
+ * binary representation of this number string.
+ *
+ * @param total String
+ */
 public void  binaryConversion(String total){
 	int currentAnswer= Integer.parseInt(total);
 	int remainder;
@@ -678,6 +666,11 @@ public void  binaryConversion(String total){
 	thirtyoneBinary.setText(""+binaryRep.charAt(0));
 }//binaryConversion
 
+/**This method converts a string of the binary number into a decimal number. 
+ * This allows the answer box to be updated when a user toggles a bit.
+ *
+ * @param binaryRep String
+ */
 	public void decimalConversion(String binaryRep){
 		int binaryMult=2;
 		int sum=0;
@@ -698,7 +691,10 @@ public void  binaryConversion(String total){
 	}//decimalConversion
 
 
-
+/**This event toggles the binary bit if the user clicks it.
+ *
+ * @param event MouseEvent
+ */
     @FXML
     void eventOne(MouseEvent event) {
 	if(binaryRep.charAt(0)==('0')){
@@ -712,6 +708,10 @@ public void  binaryConversion(String total){
 	decimalConversion(binaryRep);
 	}
 
+/**This event toggles the binary bit if the user clicks it.
+ *  
+ * @param event MouseEvent
+ */
     @FXML
     void eventTwo(MouseEvent event) {
 	if(binaryRep.charAt(1)==('0')){
@@ -724,7 +724,10 @@ public void  binaryConversion(String total){
     	}
 	decimalConversion(binaryRep);
 	}
-
+/**This event toggles the binary bit if the user clicks it.
+ *  
+ *   @param event MouseEvent
+ */
     @FXML
     void eventThree(MouseEvent event) {
 	if(binaryRep.charAt(2)==('0')){
@@ -737,6 +740,11 @@ public void  binaryConversion(String total){
         }
         decimalConversion(binaryRep);
     }
+
+/**This event toggles the binary bit if the user clicks it.
+ *  
+ * @param event MouseEvent
+ */
 
     @FXML
     void eventFour(MouseEvent event) {
@@ -751,6 +759,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it.
+ *  
+ * @param event MouseEvent
+ */
     @FXML
     void eventFive(MouseEvent event) {
 	if(binaryRep.charAt(4)==('0')){
@@ -764,6 +776,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it.
+ *
+ * @param event MouseEvent
+ */
     @FXML
     void eventSix(MouseEvent event) {
 	if(binaryRep.charAt(5)==('0')){
@@ -777,6 +793,9 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ * @param event MouseEvent 
+ */
     @FXML
     void eventSeven(MouseEvent event) {
 	if(binaryRep.charAt(6)==('0')){
@@ -789,7 +808,9 @@ public void  binaryConversion(String total){
         }
         decimalConversion(binaryRep);
     }
-
+/**This event toggles the binary bit if the user clicks it. 
+ * @param event MouseEvent 
+ */
     @FXML
     void eventEight(MouseEvent event) {
 	if(binaryRep.charAt(7)==('0')){
@@ -803,6 +824,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ * 
+ * @param event MouseEvent 
+ */
     @FXML
     void eventNine(MouseEvent event) {
 	if(binaryRep.charAt(8)==('0')){
@@ -816,6 +841,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventTen(MouseEvent event) {
 	if(binaryRep.charAt(9)==('0')){
@@ -829,6 +858,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it.
+ *
+ *  @param event MouseEvent 
+ */
     @FXML
     void eventEleven(MouseEvent event) {
 	if(binaryRep.charAt(10)==('0')){
@@ -842,6 +875,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it.
+ *  
+ *  @param event MouseEvent 
+ */
     @FXML
     void eventTwelve(MouseEvent event) {
 	if(binaryRep.charAt(11)==('0')){
@@ -855,6 +892,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventThirteen(MouseEvent event) {
 	if(binaryRep.charAt(12)==('0')){
@@ -868,6 +909,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventFourteen(MouseEvent event) {
 	if(binaryRep.charAt(13)==('0')){
@@ -881,6 +926,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventFifteen(MouseEvent event) {
 	if(binaryRep.charAt(14)==('0')){
@@ -894,6 +943,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventSixteen(MouseEvent event) {
 	if(binaryRep.charAt(15)==('0')){
@@ -907,6 +960,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventSeventeen(MouseEvent event) {
 	if(binaryRep.charAt(16)==('0')){
@@ -920,6 +977,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventEighteen(MouseEvent event) {
 	if(binaryRep.charAt(17)==('0')){
@@ -933,6 +994,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ * 
+ * @param event MouseEvent 
+ */
     @FXML
     void eventNineteen(MouseEvent event) {
 	if(binaryRep.charAt(18)==('0')){
@@ -946,6 +1011,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventTwenty(MouseEvent event) {
 	if(binaryRep.charAt(19)==('0')){
@@ -959,6 +1028,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventTwentyOne(MouseEvent event) {
 	if(binaryRep.charAt(20)==('0')){
@@ -972,6 +1045,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventTwentytwo(MouseEvent event) {
 	if(binaryRep.charAt(21)==('0')){
@@ -985,6 +1062,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventTwentythree(MouseEvent event) {
 	if(binaryRep.charAt(22)==('0')){
@@ -997,7 +1078,10 @@ public void  binaryConversion(String total){
         }
         decimalConversion(binaryRep);
     }
-
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventTwentyfour(MouseEvent event) {
 	if(binaryRep.charAt(23)==('0')){
@@ -1011,6 +1095,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventTwentyfive(MouseEvent event) {
 	if(binaryRep.charAt(24)==('0')){
@@ -1024,6 +1112,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventTwentysix(MouseEvent event) {
 	if(binaryRep.charAt(25)==('0')){
@@ -1037,6 +1129,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventTwentyseven(MouseEvent event) {
 	if(binaryRep.charAt(26)==('0')){
@@ -1050,6 +1146,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventTwentyeight(MouseEvent event) {
 	if(binaryRep.charAt(27)==('0')){
@@ -1063,6 +1163,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventTwentynine(MouseEvent event) {
 	if(binaryRep.charAt(28)==('0')){
@@ -1076,6 +1180,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventThirty(MouseEvent event) {
 	if(binaryRep.charAt(29)==('0')){
@@ -1089,6 +1197,10 @@ public void  binaryConversion(String total){
         decimalConversion(binaryRep);
     }
 
+/**This event toggles the binary bit if the user clicks it. 
+ *
+ * @param event MouseEvent 
+ */
     @FXML
     void eventThirtyOne(MouseEvent event) {
 	if(binaryRep.charAt(30)==('0')){
@@ -1101,11 +1213,10 @@ public void  binaryConversion(String total){
         }
         decimalConversion(binaryRep);
 	}
-/*This method initializes parts of the GUI from the Javafxml code.
- *  *
- *   * @param none
- *    * @return void
- *     */
+/**This method initializes parts of the GUI from the Javafxml code.
+ *
+ * @param none
+ */
     @FXML
     void initialize() {
 
