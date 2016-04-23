@@ -87,9 +87,14 @@ public class IterativeMath implements Math {
  * @return int
  */
     public int div(int lhs, int rhs) {
+	try{
 		if (rhs == 0) {
 			throw new ArithmeticException();
 		}
+	}
+	catch(ArithmeticException e){
+		return 0;
+	}
 	if(lhs==0) return 0;
 	if(lhs<rhs) return 0;
 	int total = lhs;

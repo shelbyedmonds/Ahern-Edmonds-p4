@@ -71,13 +71,20 @@ public class RecursiveMath implements Math {
  * @return int
  */
     public int div(int lhs, int rhs) {
-	if(rhs==0)	
+	try{
+	if(rhs==0){	
 		throw new ArithmeticException();
+	}
+	}
+	catch(ArithmeticException e){
+		return 0;
+	}
 	if (lhs == 0) return 0;
 	else if (lhs == rhs) return 1;
 	else if (lhs < rhs) return 0;
 	return 1 + div(lhs - rhs, rhs);
-    } // div
+    	
+	} // div
 
 /** This method recursively implements a factorial method.
  *

@@ -20,6 +20,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.InputEvent;
 import javafx.scene.Node;
+import java.lang.Math;
 
 public class Driver extends Application {
 
@@ -394,7 +395,7 @@ public String binaryRep="0000000000000000000000000000000";
 	answer.setText(answerString);
 	calculationString="";
 	calculations.setText(calculationString);
-	resetBinaryLabels();	
+	resetBinaryLabels();
 	binaryConversion(answerString);	
 	}
 
@@ -625,46 +626,56 @@ public void resetBinaryLabels(){
 public void  binaryConversion(String total){
 	int currentAnswer= Integer.parseInt(total);
 	int remainder;
-
+	String zeroString="";
+	String reverseString="";
+	binaryRep="";
 	while(currentAnswer>0){	
 		remainder=currentAnswer%2;
 		binaryRep=remainder+binaryRep;
 		currentAnswer=currentAnswer/2;
 	}
+	System.out.println(binaryRep);
 	for(int i=31-binaryRep.length(); i>0; i--){
-		binaryRep=0+ binaryRep;
+		zeroString+="0";
 	}
-	oneBinary.setText(""+binaryRep.charAt(30));
-	twoBinary.setText(""+binaryRep.charAt(29));
-	threeBinary.setText(""+binaryRep.charAt(28));
-	fourBinary.setText(""+binaryRep.charAt(27));
-	fiveBinary.setText(""+binaryRep.charAt(26));
-	sixBinary.setText(""+binaryRep.charAt(25));
-	sevenBinary.setText(""+binaryRep.charAt(24));
-	eightBinary.setText(""+binaryRep.charAt(23));
-	nineBinary.setText(""+binaryRep.charAt(22));
-	tenBinary.setText(""+binaryRep.charAt(21));
-	elevenBinary.setText(""+binaryRep.charAt(20));
-	twelveBinary.setText(""+binaryRep.charAt(19));
-	thirteenBinary.setText(""+binaryRep.charAt(18));
-	fourteenBinary.setText(""+binaryRep.charAt(17));
-	fifteenBinary.setText(""+binaryRep.charAt(16));
-	sixteenBinary.setText(""+binaryRep.charAt(15));
-	seventeenBinary.setText(""+binaryRep.charAt(14));
-	eighteenBinary.setText(""+binaryRep.charAt(13));
-	nineteenBinary.setText(""+binaryRep.charAt(12));
-	twentyBinary.setText(""+binaryRep.charAt(11));
-	twentyoneBinary.setText(""+binaryRep.charAt(10));
-	twentytwoBinary.setText(""+binaryRep.charAt(9));
-	twentythreeBinary.setText(""+binaryRep.charAt(8));
-	twentyfourBinary.setText(""+binaryRep.charAt(7));
-	twentyfiveBinary.setText(""+binaryRep.charAt(6));
-	twentysixBinary.setText(""+binaryRep.charAt(5));
-	twentysevenBinary.setText(""+binaryRep.charAt(4));
-	twentyeightBinary.setText(""+binaryRep.charAt(3));
-	twentynineBinary.setText(""+binaryRep.charAt(2));
-	thirtyBinary.setText(""+binaryRep.charAt(1));
-	thirtyoneBinary.setText(""+binaryRep.charAt(0));
+	zeroString+=binaryRep;
+	binaryRep=zeroString;
+
+	System.out.println(binaryRep);
+	
+	oneBinary.setText(""+binaryRep.charAt(0));
+        twoBinary.setText(""+binaryRep.charAt(1));
+        threeBinary.setText(""+binaryRep.charAt(2));
+        fourBinary.setText(""+binaryRep.charAt(3));
+        fiveBinary.setText(""+binaryRep.charAt(4));
+        sixBinary.setText(""+binaryRep.charAt(5));
+        sevenBinary.setText(""+binaryRep.charAt(6));
+        eightBinary.setText(""+binaryRep.charAt(7));
+        nineBinary.setText(""+binaryRep.charAt(8));
+        tenBinary.setText(""+binaryRep.charAt(9));
+        elevenBinary.setText(""+binaryRep.charAt(10));
+        twelveBinary.setText(""+binaryRep.charAt(11));
+        thirteenBinary.setText(""+binaryRep.charAt(12));
+        fourteenBinary.setText(""+binaryRep.charAt(13));
+        fifteenBinary.setText(""+binaryRep.charAt(14));
+        sixteenBinary.setText(""+binaryRep.charAt(15));
+        seventeenBinary.setText(""+binaryRep.charAt(16));
+        eighteenBinary.setText(""+binaryRep.charAt(17));
+        nineteenBinary.setText(""+binaryRep.charAt(18));
+        twentyBinary.setText(""+binaryRep.charAt(19));
+        twentyoneBinary.setText(""+binaryRep.charAt(20));
+        twentytwoBinary.setText(""+binaryRep.charAt(21));
+        twentythreeBinary.setText(""+binaryRep.charAt(22));
+        twentyfourBinary.setText(""+binaryRep.charAt(23));
+        twentyfiveBinary.setText(""+binaryRep.charAt(24));
+        twentysixBinary.setText(""+binaryRep.charAt(25));
+        twentysevenBinary.setText(""+binaryRep.charAt(26));
+        twentyeightBinary.setText(""+binaryRep.charAt(27));
+        twentynineBinary.setText(""+binaryRep.charAt(28));
+        thirtyBinary.setText(""+binaryRep.charAt(29));
+        thirtyoneBinary.setText(""+binaryRep.charAt(30));
+
+	
 }//binaryConversion
 
 /**This method converts a string of the binary number into a decimal number. 
@@ -673,22 +684,16 @@ public void  binaryConversion(String total){
  * @param binaryRep String
  */
 	public void decimalConversion(String binaryRep){
-		int binaryMult=2;
 		int sum=0;
-		for(int r=30, t=0; r>=0&& t<31; r--, t++){
-			for(int i=0; i<r; i++){
-				if(i==0)
-					binaryMult=1;
-				else
-					binaryMult=binaryMult*2;
 
-			}
-		sum=sum+binaryMult*(Integer.parseInt(binaryRep.charAt(t)+""));
+		for(int i=0,j=30; i<31&& j>=0; i++, j--){
+			sum+=((int)Math.pow(2,i))*(Integer.parseInt(binaryRep.charAt(j)+""));
 		}
 		answerString=""+sum;
 		answer.setText(answerString);
 		calculationString=answerString;
 		calculations.setText(calculationString);
+
 	}//decimalConversion
 
 
@@ -707,6 +712,7 @@ public void  binaryConversion(String total){
 		binaryRep=0+binaryRep.substring(0);
     	}
 	decimalConversion(binaryRep);
+	binaryConversion(answerString);
 	}
 
 /**This event toggles the binary bit if the user clicks it.
@@ -724,6 +730,7 @@ public void  binaryConversion(String total){
 		binaryRep=binaryRep.substring(0,1)+0+binaryRep.substring(2);
     	}
 	decimalConversion(binaryRep);
+	binaryConversion(answerString);
 	}
 /**This event toggles the binary bit if the user clicks it.
  *  
@@ -733,14 +740,15 @@ public void  binaryConversion(String total){
     void eventThree(MouseEvent event) {
 	if(binaryRep.charAt(2)==('0')){
                 threeBinary.setText("1");
-                binaryRep=binaryRep.substring(0,2)+1+binaryRep.substring(3);
+	 	binaryRep=binaryRep.substring(0,2)+1+binaryRep.substring(3);
         }
         else{
                 threeBinary.setText("0");
-                binaryRep=binaryRep.substring(0,2)+0+binaryRep.substring(3);
+	        binaryRep=binaryRep.substring(0,2)+0+binaryRep.substring(3);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+	binaryConversion(answerString);
+	}
 
 /**This event toggles the binary bit if the user clicks it.
  *  
@@ -751,14 +759,16 @@ public void  binaryConversion(String total){
     void eventFour(MouseEvent event) {
 	if(binaryRep.charAt(3)==('0')){
                 fourBinary.setText("1");
-                binaryRep=binaryRep.substring(0,3)+1+binaryRep.substring(4);
+	        binaryRep=binaryRep.substring(0,3)+1+binaryRep.substring(4);
         }
         else{
                 fourBinary.setText("0");
-                binaryRep=binaryRep.substring(0,3)+0+binaryRep.substring(4);
+	       binaryRep=binaryRep.substring(0,3)+0+binaryRep.substring(4);
         }
-        decimalConversion(binaryRep);
-    }
+
+	decimalConversion(binaryRep);
+	binaryConversion(answerString);
+	}
 
 /**This event toggles the binary bit if the user clicks it.
  *  
@@ -768,13 +778,13 @@ public void  binaryConversion(String total){
     void eventFive(MouseEvent event) {
 	if(binaryRep.charAt(4)==('0')){
                 fiveBinary.setText("1");
-                binaryRep=binaryRep.substring(0,4)+1+binaryRep.substring(5);
+	       binaryRep=binaryRep.substring(0,4)+1+binaryRep.substring(5);
         }
         else{
                 fiveBinary.setText("0");
-                binaryRep=binaryRep.substring(0,4)+0+binaryRep.substring(5);
+	       binaryRep=binaryRep.substring(0,4)+0+binaryRep.substring(5);
         }
-        decimalConversion(binaryRep);
+	decimalConversion(binaryRep);
     }
 
 /**This event toggles the binary bit if the user clicks it.
@@ -791,8 +801,9 @@ public void  binaryConversion(String total){
                 sixBinary.setText("0");
                 binaryRep=binaryRep.substring(0,5)+0+binaryRep.substring(6);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+	
+	}
 
 /**This event toggles the binary bit if the user clicks it. 
  * @param event MouseEvent 
@@ -807,8 +818,8 @@ public void  binaryConversion(String total){
                 sevenBinary.setText("0");
                 binaryRep=binaryRep.substring(0,6)+0+binaryRep.substring(7);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+	}
 /**This event toggles the binary bit if the user clicks it. 
  * @param event MouseEvent 
  */
@@ -822,8 +833,8 @@ public void  binaryConversion(String total){
                 eightBinary.setText("0");
                 binaryRep=binaryRep.substring(0,7)+0+binaryRep.substring(8);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+	}
 
 /**This event toggles the binary bit if the user clicks it. 
  * 
@@ -839,8 +850,8 @@ public void  binaryConversion(String total){
                 nineBinary.setText("0");
                 binaryRep=binaryRep.substring(0,8)+0+binaryRep.substring(9);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -856,8 +867,8 @@ public void  binaryConversion(String total){
                 tenBinary.setText("0");
                 binaryRep=binaryRep.substring(0,9)+0+binaryRep.substring(10);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+	}
 
 /**This event toggles the binary bit if the user clicks it.
  *
@@ -873,8 +884,8 @@ public void  binaryConversion(String total){
                 elevenBinary.setText("0");
                 binaryRep=binaryRep.substring(0,10)+0+binaryRep.substring(11);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it.
  *  
@@ -890,8 +901,8 @@ public void  binaryConversion(String total){
                 twelveBinary.setText("0");
                 binaryRep=binaryRep.substring(0,11)+0+binaryRep.substring(12);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -907,8 +918,8 @@ public void  binaryConversion(String total){
                 thirteenBinary.setText("0");
                 binaryRep=binaryRep.substring(0,12)+0+binaryRep.substring(13);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -924,8 +935,8 @@ public void  binaryConversion(String total){
                 fourteenBinary.setText("0");
                 binaryRep=binaryRep.substring(0,13)+0+binaryRep.substring(14);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -941,8 +952,8 @@ public void  binaryConversion(String total){
                 fifteenBinary.setText("0");
                 binaryRep=binaryRep.substring(0,14)+0+binaryRep.substring(15);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -958,8 +969,8 @@ public void  binaryConversion(String total){
                 sixteenBinary.setText("0");
                 binaryRep=binaryRep.substring(0,15)+0+binaryRep.substring(16);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -975,8 +986,9 @@ public void  binaryConversion(String total){
                 seventeenBinary.setText("0");
                 binaryRep=binaryRep.substring(0,16)+0+binaryRep.substring(17);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
+
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -990,10 +1002,10 @@ public void  binaryConversion(String total){
         }
         else{
                 eighteenBinary.setText("0");
-                binaryRep=binaryRep.substring(0,17)+0+binaryRep.substring(18);
-        }
-        decimalConversion(binaryRep);
-    }
+        	binaryRep=binaryRep.substring(0,17)+0+binaryRep.substring(18);
+	}
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  * 
@@ -1009,8 +1021,8 @@ public void  binaryConversion(String total){
                 nineteenBinary.setText("0");
                 binaryRep=binaryRep.substring(0,18)+0+binaryRep.substring(19);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -1026,8 +1038,8 @@ public void  binaryConversion(String total){
                 twentyBinary.setText("0");
                 binaryRep=binaryRep.substring(0,19)+0+binaryRep.substring(20);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -1043,8 +1055,8 @@ public void  binaryConversion(String total){
                 twentyoneBinary.setText("0");
                 binaryRep=binaryRep.substring(0,20)+0+binaryRep.substring(21);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -1060,8 +1072,8 @@ public void  binaryConversion(String total){
                 twentytwoBinary.setText("0");
                 binaryRep=binaryRep.substring(0,21)+0+binaryRep.substring(22);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -1077,8 +1089,8 @@ public void  binaryConversion(String total){
                 twentythreeBinary.setText("0");
                 binaryRep=binaryRep.substring(0,22)+0+binaryRep.substring(23);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 /**This event toggles the binary bit if the user clicks it. 
  *
  * @param event MouseEvent 
@@ -1093,8 +1105,8 @@ public void  binaryConversion(String total){
                 twentyfourBinary.setText("0");
                 binaryRep=binaryRep.substring(0,23)+0+binaryRep.substring(24);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -1110,8 +1122,8 @@ public void  binaryConversion(String total){
                 twentyfiveBinary.setText("0");
                 binaryRep=binaryRep.substring(0,24)+0+binaryRep.substring(25);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -1127,8 +1139,8 @@ public void  binaryConversion(String total){
                 twentysixBinary.setText("0");
                 binaryRep=binaryRep.substring(0,25)+0+binaryRep.substring(26);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -1144,8 +1156,8 @@ public void  binaryConversion(String total){
                 twentysevenBinary.setText("0");
                 binaryRep=binaryRep.substring(0,26)+0+binaryRep.substring(27);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -1161,8 +1173,8 @@ public void  binaryConversion(String total){
                 twentyeightBinary.setText("0");
                 binaryRep=binaryRep.substring(0,27)+0+binaryRep.substring(28);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -1178,8 +1190,8 @@ public void  binaryConversion(String total){
                 twentynineBinary.setText("0");
                 binaryRep=binaryRep.substring(0,28)+0+binaryRep.substring(29);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -1195,8 +1207,8 @@ public void  binaryConversion(String total){
                 thirtyBinary.setText("0");
                 binaryRep=binaryRep.substring(0,29)+0+binaryRep.substring(30);
         }
-        decimalConversion(binaryRep);
-    }
+	decimalConversion(binaryRep);
+}
 
 /**This event toggles the binary bit if the user clicks it. 
  *
@@ -1209,11 +1221,11 @@ public void  binaryConversion(String total){
                 binaryRep=binaryRep.substring(0,30)+1;
         }
         else{
-                thirtyBinary.setText("0");
+                thirtyoneBinary.setText("0");
                 binaryRep=binaryRep.substring(0,30)+0;
         }
-        decimalConversion(binaryRep);
-	}
+	decimalConversion(binaryRep);
+}
 /**This method initializes parts of the GUI from the Javafxml code.
  *
  * @param none
