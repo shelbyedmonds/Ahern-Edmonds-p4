@@ -625,6 +625,7 @@ public void resetBinaryLabels(){
 public void  binaryConversion(String total){
 	int currentAnswer= Integer.parseInt(total);
 	int remainder;
+
 	while(currentAnswer>0){	
 		remainder=currentAnswer%2;
 		binaryRep=remainder+binaryRep;

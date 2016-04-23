@@ -1,5 +1,5 @@
 package cs1302.calc;
-
+import java.lang.ArithmeticException;
 /* Implement the Math interface using recursion here. For each method, replace
  * the throw statement with your implementation.
  */
@@ -71,6 +71,8 @@ public class RecursiveMath implements Math {
  * @return int
  */
     public int div(int lhs, int rhs) {
+	if(rhs==0)	
+		throw new ArithmeticException();
 	if (lhs == 0) return 0;
 	else if (lhs == rhs) return 1;
 	else if (lhs < rhs) return 0;
