@@ -385,8 +385,15 @@ public String binaryRep="0000000000000000000000000000000";
 	void actionEquals(ActionEvent event) {
 	answer.setEditable(false);
 	calculations.setEditable(false);
-
-	infix= calculationString.split("  ");
+	for(int i=0; i<calculationString.length(); i++){
+		if((i-1)>0&&(i+1)<calculationString.length()){
+			if(calculationString.substring(i-1,i+1).equals("  ")){
+				calculationString=calculationString.substring(0,i)+calculationString.substring(i+1);
+			}
+		}
+	}
+	System.out.println(calculationString);
+	infix= calculationString.split(" ");
 	postfix=ReversePolishNotation.infixToPostfix(infix);
 	if(recursive==false)
 		answerString=""+ReversePolishNotation.evaluate(iterator, postfix);
@@ -408,7 +415,7 @@ public String binaryRep="0000000000000000000000000000000";
     void actionEventDivide(ActionEvent event) {
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString + "  /  ";
+	calculationString=calculationString + " / ";
 	calculations.setText(calculationString);
     }
 
@@ -421,7 +428,7 @@ public String binaryRep="0000000000000000000000000000000";
     void actionEventMinus(ActionEvent event) {
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString+"  -  ";
+	calculationString=calculationString+" - ";
 	calculations.setText(calculationString);
     }
 
@@ -435,7 +442,7 @@ public String binaryRep="0000000000000000000000000000000";
     void actionEventMultiply(ActionEvent event) {
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString+"  *  ";
+	calculationString=calculationString+" * ";
 	calculations.setText(calculationString);
 	}
 
@@ -449,7 +456,7 @@ public String binaryRep="0000000000000000000000000000000";
     void actionEventAdd(ActionEvent event) {
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString+"  +  ";
+	calculationString=calculationString+" + ";
 	calculations.setText(calculationString);
     }
 
@@ -463,7 +470,7 @@ public String binaryRep="0000000000000000000000000000000";
     void actionEventFactorial(ActionEvent event) {
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString+"  !  ";
+	calculationString=calculationString+" ! ";
 	calculations.setText(calculationString);
     }
 
@@ -506,7 +513,7 @@ public String binaryRep="0000000000000000000000000000000";
     void actionEventPower(ActionEvent event) {
         answer.setEditable(false);
         calculations.setEditable(false);
-	calculationString=calculationString+"  ^  ";
+	calculationString=calculationString+" ^ ";
 	calculations.setText(calculationString);
     }
 
@@ -634,14 +641,11 @@ public void  binaryConversion(String total){
 		binaryRep=remainder+binaryRep;
 		currentAnswer=currentAnswer/2;
 	}
-	System.out.println(binaryRep);
 	for(int i=31-binaryRep.length(); i>0; i--){
 		zeroString+="0";
 	}
 	zeroString+=binaryRep;
 	binaryRep=zeroString;
-
-	System.out.println(binaryRep);
 	
 	oneBinary.setText(""+binaryRep.charAt(0));
         twoBinary.setText(""+binaryRep.charAt(1));
