@@ -392,7 +392,6 @@ public String binaryRep="0000000000000000000000000000000";
 			}
 		}
 	}
-	System.out.println(calculationString);
 	infix= calculationString.split(" ");
 	postfix=ReversePolishNotation.infixToPostfix(infix);
 	if(recursive==false)
